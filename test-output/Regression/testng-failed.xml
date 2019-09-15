@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression]">
+  <test thread-count="5" name="AllTests(failed)">
+    <classes>
+      <class name="TestCases.TC1_phpTravelLoginChrome">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="tearDown"/>
+          <include name="phpTravelAdminLogin"/>
+        </methods>
+      </class> <!-- TestCases.TC1_phpTravelLoginChrome -->
+    </classes>
+  </test> <!-- AllTests(failed) -->
+</suite> <!-- Failed suite [Regression] -->
