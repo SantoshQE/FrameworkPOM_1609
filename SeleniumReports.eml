@@ -3,10 +3,37 @@
 	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
 	<contentEntry url="file://$MODULE_DIR$">
 		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<testFolder url="file://$MODULE_DIR$/src/test/resources"/>
 		<excludeFolder url="file://$MODULE_DIR$/target"/>
 	</contentEntry>
 	<lib name="Maven: org.testng:testng:7.0.0" scope="TEST"/>
-	<lib name="Maven: com.beust:jcommander:1.72" scope="TEST"/>
+	<lib name="Maven: com.beust:jcommander:1.72" scope="RUNTIME"/>
+	<lib name="Maven: io.qameta.allure:allure-testng:2.12.0" scope="TEST"/>
+	<lib name="Maven: io.qameta.allure:allure-java-commons:2.12.0" scope="TEST"/>
+	<lib name="Maven: io.qameta.allure:allure-model:2.12.0" scope="RUNTIME"/>
+	<lib name="Maven: org.slf4j:slf4j-api:1.7.25" scope="RUNTIME"/>
+	<lib name="Maven: org.apache.tika:tika-core:1.20" scope="RUNTIME"/>
+	<lib name="Maven: org.jooq:joor-java-8:0.9.10" scope="TEST"/>
+	<lib name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" scope="RUNTIME"/>
+	<lib name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" scope="RUNTIME"/>
+	<lib name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" scope="RUNTIME"/>
+	<lib name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.8" scope="RUNTIME"/>
+	<lib name="Maven: org.yaml:snakeyaml:1.23" scope="RUNTIME"/>
+	<lib name="Maven: io.qameta.allure:allure-generator:2.13.0" scope="RUNTIME"/>
+	<lib name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.8" scope="RUNTIME"/>
+	<lib name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.8" scope="RUNTIME"/>
+	<lib name="Maven: org.codehaus.woodstox:stax2-api:3.1.4" scope="RUNTIME"/>
+	<lib name="Maven: com.fasterxml.woodstox:woodstox-core:5.0.3" scope="RUNTIME"/>
+	<lib name="Maven: org.allurefw:allure1-model:1.0" scope="RUNTIME"/>
+	<lib name="Maven: ru.qatools.commons:properties:2.0.RC5" scope="RUNTIME"/>
+	<lib name="Maven: com.github.baev:jaxb-utils:1.0" scope="RUNTIME"/>
+	<lib name="Maven: org.eclipse.jetty:jetty-server:9.4.14.v20181114" scope="RUNTIME"/>
+	<lib name="Maven: javax.servlet:javax.servlet-api:3.1.0" scope="RUNTIME"/>
+	<lib name="Maven: org.eclipse.jetty:jetty-http:9.4.14.v20181114" scope="RUNTIME"/>
+	<lib name="Maven: org.eclipse.jetty:jetty-util:9.4.14.v20181114" scope="RUNTIME"/>
+	<lib name="Maven: org.eclipse.jetty:jetty-io:9.4.14.v20181114" scope="RUNTIME"/>
+	<lib name="Maven: org.slf4j:slf4j-log4j12:1.7.25" scope="RUNTIME"/>
+	<lib name="Maven: log4j:log4j:1.2.17" scope="RUNTIME"/>
 	<levels>
 		<level name="Maven: org.seleniumhq.selenium:selenium-java:3.141.59" value="project"/>
 		<level name="Maven: org.seleniumhq.selenium:selenium-api:3.141.59" value="project"/>
@@ -42,5 +69,34 @@
 		<level name="Maven: org.apache.httpcomponents:httpmime:4.5.2" value="project"/>
 		<level name="Maven: com.google.code.gson:gson:2.8.5" value="project"/>
 		<level name="Maven: commons-io:commons-io:2.6" value="project"/>
+		<level name="Maven: io.qameta.allure:allure-testng:2.12.0" value="project"/>
+		<level name="Maven: io.qameta.allure:allure-java-commons:2.12.0" value="project"/>
+		<level name="Maven: io.qameta.allure:allure-model:2.12.0" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-api:1.7.25" value="project"/>
+		<level name="Maven: org.apache.tika:tika-core:1.20" value="project"/>
+		<level name="Maven: org.jooq:joor-java-8:0.9.10" value="project"/>
+		<level name="Maven: org.aspectj:aspectjweaver:1.8.10" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.8" value="project"/>
+		<level name="Maven: org.yaml:snakeyaml:1.23" value="project"/>
+		<level name="Maven: io.qameta.allure:allure-generator:2.13.0" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.8" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.8" value="project"/>
+		<level name="Maven: org.codehaus.woodstox:stax2-api:3.1.4" value="project"/>
+		<level name="Maven: com.fasterxml.woodstox:woodstox-core:5.0.3" value="project"/>
+		<level name="Maven: org.allurefw:allure1-model:1.0" value="project"/>
+		<level name="Maven: ru.qatools.commons:properties:2.0.RC5" value="project"/>
+		<level name="Maven: com.github.baev:jaxb-utils:1.0" value="project"/>
+		<level name="Maven: org.eclipse.jetty:jetty-server:9.4.14.v20181114" value="project"/>
+		<level name="Maven: javax.servlet:javax.servlet-api:3.1.0" value="project"/>
+		<level name="Maven: org.eclipse.jetty:jetty-http:9.4.14.v20181114" value="project"/>
+		<level name="Maven: org.eclipse.jetty:jetty-util:9.4.14.v20181114" value="project"/>
+		<level name="Maven: org.eclipse.jetty:jetty-io:9.4.14.v20181114" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-log4j12:1.7.25" value="project"/>
+		<level name="Maven: log4j:log4j:1.2.17" value="project"/>
+		<level name="SikuliLibs" value="project"/>
+		<level name="SikuliLibs1" value="project"/>
 	</levels>
 </component>

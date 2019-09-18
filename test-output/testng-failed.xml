@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
   <test thread-count="5" name="SeleniumReports(failed)">
     <classes>
-      <class name="ExtentReportListener.ExtentReporterNG">
+      <class name="TestCases.TC3_twitLoginChrome">
         <methods>
-          <include name="endReport"/>
-          <include name="getResult"/>
-          <include name="setup"/>
-          <include name="verifyLogo"/>
-          <include name="startReport"/>
+          <include name="twitterLogin"/>
+          <include name="tearDown"/>
+          <include name="navigateToProfile"/>
+          <include name="launchBrowser"/>
         </methods>
-      </class> <!-- ExtentReportListener.ExtentReporterNG -->
+      </class> <!-- TestCases.TC3_twitLoginChrome -->
     </classes>
   </test> <!-- SeleniumReports(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

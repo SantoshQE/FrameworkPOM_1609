@@ -2,7 +2,8 @@ package TestCases;
 
 import Config.TestBase;
 import Pages.twitLoginPage;
-import com.sun.org.glassfish.gmbal.Description;
+//import com.sun.org.glassfish.gmbal.Description;
+import io.qameta.allure.Description;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;

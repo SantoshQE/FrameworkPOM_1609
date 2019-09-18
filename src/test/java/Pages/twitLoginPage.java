@@ -2,6 +2,7 @@ package Pages;
 
 import ObjectRepository.Twitter_OR;
 import Utils.Utilities;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,12 +56,14 @@ public class twitLoginPage
     {
         driver.get(uRL);
     }
+    @Step("navigateToProfile - twitLoginPage")
     public void navigateToProfile()
     {
         Utilities.highLightElement(driver,twit_ProfileLink);
         twit_ProfileLink.click();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
     }
+    @Step("loginToTwitterAccount - twitLoginPage with username : {0} and password : {1}")
     public void loginToTwitterAccount(String userName,String pwd)
     {
         Utilities.highLightElement(driver,twit_username);
