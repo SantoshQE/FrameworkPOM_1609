@@ -15,7 +15,7 @@ public class checkAutoit
         runWinAuthCheck();
     }
     public static void runWinAuthCheck() throws IOException {
-        for(int i=1;i<11;i++)
+        for(int i=1;i<=2;i++)
         {
             System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/resources/ChromeDriver/Chrome76/chromedriver.exe");
             driver = new ChromeDriver();
