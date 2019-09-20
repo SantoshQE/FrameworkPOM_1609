@@ -1,89 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="TestingSuite" duration-ms="74977" started-at="2019-09-18T10:51:15 IST" finished-at="2019-09-18T10:52:30 IST">
+  <suite name="Default Suite" duration-ms="21842" started-at="2019-09-18T22:56:01 IST" finished-at="2019-09-18T22:56:23 IST">
     <groups>
     </groups>
-    <test name="TC#1" duration-ms="28199" started-at="2019-09-18T10:51:15 IST" finished-at="2019-09-18T10:51:43 IST">
+    <test name="SeleniumReports" duration-ms="21842" started-at="2019-09-18T22:56:01 IST" finished-at="2019-09-18T22:56:23 IST">
       <class name="TestCases.TC3_twitLoginChrome">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:TestCases.TC3_twitLoginChrome@61884cb1]" name="launchBrowser" is-config="true" duration-ms="16134" started-at="2019-09-18T10:51:15 IST" description="--TestNGDescription :-- Launch web browser" finished-at="2019-09-18T10:51:31 IST">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:TestCases.TC3_twitLoginChrome@609640d5]" name="launchBrowser" is-config="true" duration-ms="14824" started-at="2019-09-18T22:56:01 IST" description="--TestNGDescription :-- Launch web browser" finished-at="2019-09-18T22:56:16 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="twitterLogin()[pri:1, instance:TestCases.TC3_twitLoginChrome@61884cb1]" name="twitterLogin" duration-ms="4521" started-at="2019-09-18T10:51:31 IST" description="--TestNGDescription :-- Log into twitter account" finished-at="2019-09-18T10:51:36 IST">
+        <test-method status="PASS" signature="twitterLogin()[pri:1, instance:TestCases.TC3_twitLoginChrome@609640d5]" name="twitterLogin" duration-ms="3731" started-at="2019-09-18T22:56:16 IST" description="--TestNGDescription :-- Log into twitter account" finished-at="2019-09-18T22:56:19 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- twitterLogin -->
-        <test-method status="PASS" signature="navigateToProfile()[pri:2, instance:TestCases.TC3_twitLoginChrome@61884cb1]" name="navigateToProfile" duration-ms="4637" started-at="2019-09-18T10:51:36 IST" description="--TestNGDescription :-- Navigate to twitter profile page" finished-at="2019-09-18T10:51:41 IST">
+        <test-method status="PASS" signature="navigateToProfile()[pri:2, instance:TestCases.TC3_twitLoginChrome@609640d5]" name="navigateToProfile" duration-ms="2146" started-at="2019-09-18T22:56:20 IST" description="--TestNGDescription :-- Navigate to twitter profile page" finished-at="2019-09-18T22:56:22 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToProfile -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.TC3_twitLoginChrome@61884cb1]" name="tearDown" is-config="true" duration-ms="2250" started-at="2019-09-18T10:51:41 IST" finished-at="2019-09-18T10:51:43 IST">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.TC3_twitLoginChrome@609640d5]" name="tearDown" is-config="true" duration-ms="490" started-at="2019-09-18T22:56:22 IST" finished-at="2019-09-18T22:56:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- TestCases.TC3_twitLoginChrome -->
-    </test> <!-- TC#1 -->
-    <test name="TC#2" duration-ms="18051" started-at="2019-09-18T10:51:43 IST" finished-at="2019-09-18T10:52:01 IST">
-      <class name="TestCases.TC3_twitLoginChrome">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:TestCases.TC3_twitLoginChrome@630cb4a4]" name="launchBrowser" is-config="true" duration-ms="6363" started-at="2019-09-18T10:51:43 IST" description="--TestNGDescription :-- Launch web browser" finished-at="2019-09-18T10:51:50 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="twitterLogin()[pri:1, instance:TestCases.TC3_twitLoginChrome@630cb4a4]" name="twitterLogin" duration-ms="7203" started-at="2019-09-18T10:51:50 IST" description="--TestNGDescription :-- Log into twitter account" finished-at="2019-09-18T10:51:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- twitterLogin -->
-        <test-method status="PASS" signature="navigateToProfile()[pri:2, instance:TestCases.TC3_twitLoginChrome@630cb4a4]" name="navigateToProfile" duration-ms="2121" started-at="2019-09-18T10:51:57 IST" description="--TestNGDescription :-- Navigate to twitter profile page" finished-at="2019-09-18T10:51:59 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToProfile -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.TC3_twitLoginChrome@630cb4a4]" name="tearDown" is-config="true" duration-ms="2356" started-at="2019-09-18T10:51:59 IST" finished-at="2019-09-18T10:52:01 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- TestCases.TC3_twitLoginChrome -->
-    </test> <!-- TC#2 -->
-    <test name="TC#3" duration-ms="13856" started-at="2019-09-18T10:52:01 IST" finished-at="2019-09-18T10:52:15 IST">
-      <class name="TestCases.TC3_twitLoginChrome">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:TestCases.TC3_twitLoginChrome@619bfe29]" name="launchBrowser" is-config="true" duration-ms="6024" started-at="2019-09-18T10:52:01 IST" description="--TestNGDescription :-- Launch web browser" finished-at="2019-09-18T10:52:07 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="twitterLogin()[pri:1, instance:TestCases.TC3_twitLoginChrome@619bfe29]" name="twitterLogin" duration-ms="3520" started-at="2019-09-18T10:52:07 IST" description="--TestNGDescription :-- Log into twitter account" finished-at="2019-09-18T10:52:11 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- twitterLogin -->
-        <test-method status="PASS" signature="navigateToProfile()[pri:2, instance:TestCases.TC3_twitLoginChrome@619bfe29]" name="navigateToProfile" duration-ms="1934" started-at="2019-09-18T10:52:11 IST" description="--TestNGDescription :-- Navigate to twitter profile page" finished-at="2019-09-18T10:52:13 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToProfile -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.TC3_twitLoginChrome@619bfe29]" name="tearDown" is-config="true" duration-ms="2370" started-at="2019-09-18T10:52:13 IST" finished-at="2019-09-18T10:52:15 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- TestCases.TC3_twitLoginChrome -->
-    </test> <!-- TC#3 -->
-    <test name="TC#4" duration-ms="14621" started-at="2019-09-18T10:52:15 IST" finished-at="2019-09-18T10:52:30 IST">
-      <class name="TestCases.TC3_twitLoginChrome">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:TestCases.TC3_twitLoginChrome@30f5a68a]" name="launchBrowser" is-config="true" duration-ms="6154" started-at="2019-09-18T10:52:15 IST" description="--TestNGDescription :-- Launch web browser" finished-at="2019-09-18T10:52:21 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="twitterLogin()[pri:1, instance:TestCases.TC3_twitLoginChrome@30f5a68a]" name="twitterLogin" duration-ms="3388" started-at="2019-09-18T10:52:21 IST" description="--TestNGDescription :-- Log into twitter account" finished-at="2019-09-18T10:52:25 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- twitterLogin -->
-        <test-method status="PASS" signature="navigateToProfile()[pri:2, instance:TestCases.TC3_twitLoginChrome@30f5a68a]" name="navigateToProfile" duration-ms="2727" started-at="2019-09-18T10:52:25 IST" description="--TestNGDescription :-- Navigate to twitter profile page" finished-at="2019-09-18T10:52:27 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToProfile -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.TC3_twitLoginChrome@30f5a68a]" name="tearDown" is-config="true" duration-ms="2329" started-at="2019-09-18T10:52:27 IST" finished-at="2019-09-18T10:52:30 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- TestCases.TC3_twitLoginChrome -->
-    </test> <!-- TC#4 -->
-  </suite> <!-- TestingSuite -->
+    </test> <!-- SeleniumReports -->
+  </suite> <!-- Default Suite -->
 </testng-results>

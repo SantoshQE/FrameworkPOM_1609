@@ -18,6 +18,7 @@ public class extentListener implements ITestListener
     ExtentReports extent;
     public static ExtentTest test;
 
+
     public void onStart(ITestResult result)
     {
         htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +    "/test-output/TestResultsReport.html");
