@@ -1,5 +1,21 @@
 package ExtentReportListener;
 
+import Config.TestBase;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.testng.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.xml.XmlSuite;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -8,54 +24,78 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import Config.TestBase;
-import Pages.twitLoginPage;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.*;
-import org.testng.annotations.*;
-import org.testng.xml.XmlSuite;
-
-/*import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;*/
-
-public class ExtentReporterNG extends TestBase implements IReporter
+public class ExtentReporterNG implements IReporter
 {
+    public ExtentReports extent;
     public WebDriver driver;
     public ExtentHtmlReporter htmlReporter;
-    public ExtentReports extent;
+    //public ExtentReports extent;
     public ExtentTest logger;
     public static TestBase tBase;
 
-    @BeforeTest
-    public void startReport() {
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/STMExtentReport.html");
-        // Create an object of Extent Reports
+    @Override
+    public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
+        //extent = new ExtentReports(outputDirectory + File.separator + "ExtentReportTestNG.html", true);
+        // initialize the HtmlReporter
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/TestExecutionReport.html");
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
-        extent.setSystemInfo("Host Name", "TCS");
-        extent.setSystemInfo("Environment", "QA");
+        extent.setSystemInfo("Host Name", "QA");
+        extent.setSystemInfo("Environment", "QA Environment");
         extent.setSystemInfo("User Name", "Santosh Pandhare");
-        htmlReporter.config().setDocumentTitle("QA Test Report ");
+        htmlReporter.config().setDocumentTitle("QA Test Report");
         // Name of the report
-        htmlReporter.config().setReportName("QA Test Report ");
+        htmlReporter.config().setReportName("QA Test Report");
         // Dark Theme
-        htmlReporter.config().setTheme(Theme.STANDARD);
+        for (ISuite suite : suites)
+        {
+            Map<String, ISuiteResult> result = suite.getResults();
+
+            for (ISuiteResult r : result.values())
+            {
+                ITestContext context = r.getTestContext();
+                buildTestNodes(context.getPassedTests(), Status.PASS);
+                buildTestNodes(context.getFailedTests(), Status.FAIL);
+                buildTestNodes(context.getSkippedTests(), Status.SKIP);
+            }
+        }
+        extent.flush();
+      //  extent.close();
+    }
+
+    private void buildTestNodes(IResultMap tests, Status status)
+    {
+        ExtentTest test;
+
+        if (tests.size() > 0) {
+            for (ITestResult result : tests.getAllResults())
+            {
+               // test = extent.startTest(result.getMethod().getMethodName());
+                test = extent.createTest(result.getMethod().getMethodName());
+               // test.getModel().setStartTime(test.getModel().getStartTime());
+              //  test.getModel().setStartTime(test.getModel().getEndTime());
+               // test.getTest().startedTime = getTime(result.getStartMillis());
+               // test.getTest().endedTime = getTime(result.getEndMillis());
+                for (String group : result.getMethod().getGroups())
+                    test.assignCategory(group);
+                String message = "Test " + status.toString().toLowerCase() + "ed";
+                if (result.getThrowable() != null)
+                    message = result.getThrowable().getMessage();
+                test.log(status, message);
+                //extent.endTest(test);
+            }
+        }
+    }
+
+    private Date getTime(long millis)
+    {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(millis);
+        return calendar.getTime();
     }
     //This method is to capture the screenshot and return the path of the screenshot.
-    public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {
+    public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException
+    {
         String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         TakesScreenshot ts = (TakesScreenshot) TestBase.driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
@@ -65,46 +105,9 @@ public class ExtentReporterNG extends TestBase implements IReporter
         FileUtils.copyFile(source, finalDestination);
         return destination;
     }
-    @BeforeMethod
-    public void setup()
-    {
-/*        System.setProperty("webdriver.chrome.driver","C://AutomationFramework//Drivers//chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.google.com/");
-       // tBase = new TestBase();*/
-        TestBase.open_Browser("Chrome");
-     //   driver.get("https://www.google.com");
-        TestBase.driver.get("https://www.google.com");
-    }
-    @Test
-    public void verifyTitle()
-    {
-        logger = extent.createTest("To verify Google Title");
-        Assert.assertEquals(TestBase.driver.getTitle(),"Google");
-    }
-    @Test
-    public void verifyLogo()
-    {
-        logger = extent.createTest("To verify Google Logo");
-        //boolean img = TestBase.driver.findElement(By.xpath("//img[@id='hplogo']")).isDisplayed();
-        boolean img = TestBase.driver.findElement(By.xpath("//*[@id='hplogo']/div[2]")).isDisplayed();
-        // "//*[@id='hplogo']/div[2]"
-        logger.createNode("Image is Present");
-        Assert.assertTrue(img);
-        logger.createNode("Image is not Present");
-        try
-        {
-            Assert.assertFalse(img);
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-
-    }
     @AfterMethod
-    public void getResult(ITestResult result) throws Exception{
+    public void getResult(ITestResult result) throws Exception
+    {
         if(result.getStatus() == ITestResult.FAILURE){
             //MarkupHelper is used to display the output in different colors
             logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " - Test Case Failed", ExtentColor.ORANGE));
@@ -114,7 +117,7 @@ public class ExtentReporterNG extends TestBase implements IReporter
             //String Scrnshot=TakeScreenshot.captuerScreenshot(driver,"TestCaseFailed");
             String screenshotPath = getScreenShot(TestBase.driver, result.getName());
             //To add it in the extent report
-           // logger.fail("Test Case Failed Snapshot is at below " + logger.addScreenCaptureFromPath(screenshotPath.toString()));
+            // logger.fail("Test Case Failed Snapshot is at below " + logger.addScreenCaptureFromPath(screenshotPath.toString()));
             logger.fail("Test Case Failed Snapshot is at below " + logger.addScreenCaptureFromPath(screenshotPath,"Test Failed"));
             logger.addScreenCaptureFromPath(screenshotPath,"Test Failed");
         }
@@ -124,13 +127,16 @@ public class ExtentReporterNG extends TestBase implements IReporter
         else if(result.getStatus() == ITestResult.SUCCESS)
         {
             logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
+            String screenshotPath = getScreenShot(TestBase.driver, result.getName());
+            logger.pass("Test Case passed Snapshot is at below " + logger.addScreenCaptureFromPath(screenshotPath,"Test Passed"));
+            logger.addScreenCaptureFromPath(screenshotPath,"Test Passed");
         }
         TestBase.driver.quit();
     }
 
     @AfterTest
-    public void endReport() {
+    public void endReport()
+    {
         extent.flush();
     }
-
 }

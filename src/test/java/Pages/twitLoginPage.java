@@ -1,12 +1,15 @@
 package Pages;
 
+import ExtentReportListener.ExtentReporterNG;
 import ObjectRepository.Twitter_OR;
 import Utils.Utilities;
+import com.aventstack.extentreports.ExtentReports;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +22,7 @@ public class twitLoginPage
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
+    ExtentReporterNG ExtentRp = new ExtentReporterNG();
 
     @FindBy(xpath =  Twitter_OR.TwitterSite )
     public WebElement TwitterSite;
@@ -59,13 +63,26 @@ public class twitLoginPage
     @Step("navigateToProfile - twitLoginPage")
     public void navigateToProfile()
     {
+        ExtentRp.logger = ExtentRp.extent.createTest("Navigate To Profile Link Check");
         Utilities.highLightElement(driver,twit_ProfileLink);
+        ExtentRp.logger.createNode("Profile Link is Present");
+        Assert.assertTrue(twit_ProfileLink.isDisplayed());
+        ExtentRp.logger.createNode("Profile Link is NOT Present");
+        try
+        {
+            Assert.assertTrue(twit_ProfileLink.isDisplayed());
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
         twit_ProfileLink.click();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
     }
     @Step("loginToTwitterAccount - twitLoginPage with username : {0} and password : {1}")
     public void loginToTwitterAccount(String userName,String pwd)
     {
+        ExtentRp.logger = ExtentRp.extent.createTest("To verify Google Logo");
         Utilities.highLightElement(driver,twit_username);
         twit_username.sendKeys(userName);
         Utilities.highLightElement(driver,twit_password);
@@ -73,5 +90,8 @@ public class twitLoginPage
         Utilities.highLightElement(driver,twit_BtnLogin);
         twit_BtnLogin.click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        ExtentRp.logger.createNode("loginToTwitterAccount");
+
+
     }
 }

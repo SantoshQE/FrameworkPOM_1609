@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestingSuite" parallel="none">
     <listeners>
-        <listener class-name="TestCases" />
+        <listener class-name="ExtentReportListener.ExtentReporterNG" />
     </listeners>
     <test name="TC#1">
         <classes>
@@ -11,17 +11,7 @@
     </test>
     <test name="TC#2">
         <classes>
-            <class name="TestCases.TC3_twitLoginChrome"/>
-        </classes>
-    </test>
-    <test name="TC#3">
-        <classes>
-            <class name="TestCases.TC3_twitLoginChrome"/>
-        </classes>
-    </test>
-    <test name="TC#4">
-        <classes>
-            <class name="TestCases.TC3_twitLoginChrome"/>
+            <class name="TestCases.TC4_twitLoginIE"/>
         </classes>
     </test>
 </suite>

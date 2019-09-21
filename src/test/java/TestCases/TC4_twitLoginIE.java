@@ -25,7 +25,7 @@ public class TC4_twitLoginIE extends TestBase
     @Description("Navigate to twitter profile page")
     public void twitterLogin() throws Throwable
     {
-        twtLoginPg.loginToTwitterAccount("9967887510","Tcs@1983");
+        twtLoginPg.loginToTwitterAccount("9967887510","Tcs@19831");
     }
     @Test(priority = 2)
     @Description("Navigate to twitter profile page")

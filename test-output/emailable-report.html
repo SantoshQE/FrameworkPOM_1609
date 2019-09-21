@@ -8,20 +8,24 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Default Suite</th></tr>
-<tr><td><a href="#t0">SeleniumReports</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">24,246</td><td></td><td></td></tr>
+<tr><th colspan="7">TestingSuite</th></tr>
+<tr><td><a href="#t0">TC#1</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">15,993</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">TC#2</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">19,301</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">2</th><th class="num">0</th><th class="num">0</th><th class="num attn">2</th><th class="num">35,294</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SeleniumReports &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">ExtentReportListener.ExtentReporterNG</td><td><a href="#m0">verifyLogo</a></td><td rowspan="1">1569051983360</td><td rowspan="1">5189</td></tr><tr><th colspan="4">SeleniumReports &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">ExtentReportListener.ExtentReporterNG</td><td><a href="#m1">verifyTitle</a></td><td rowspan="1">1569051995765</td><td rowspan="1">28</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestingSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TC#1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">TestCases.TC3_twitLoginChrome</td><td><a href="#m0">navigateToProfile</a></td><td rowspan="1">1569069103169</td><td rowspan="1">1348</td></tr><tr class="passedeven"><td><a href="#m1">twitterLogin</a></td><td rowspan="1">1569069099131</td><td rowspan="1">3728</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">TC#2 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">TestCases.TC4_twitLoginIE</td><td><a href="#m2">navigateToProfile</a></td><td rowspan="1">1569069118746</td><td rowspan="1">5346</td></tr><tr class="failedeven"><td><a href="#m3">twitterLogin</a></td><td rowspan="1">1569069113431</td><td rowspan="1">5289</td></tr></tbody>
 </table>
-<h2>SeleniumReports</h2><h3 id="m0">ExtentReportListener.ExtentReporterNG#verifyLogo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;hplogo&apos;]/div[2]&quot;}
-  (Session info: chrome=77.0.3865.90)
+<h2>TC#1</h2><h3 id="m0">TestCases.TC3_twitLoginChrome#navigateToProfile</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">TestCases.TC3_twitLoginChrome#twitterLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>TC#2</h2><h3 id="m2">TestCases.TC4_twitLoginIE#navigateToProfile</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //*[@id=&apos;react-root&apos;]//div/span[contains(text(),&apos;Profile&apos;)]
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;SANTOSH-PC&apos;, ip: &apos;192.168.0.8&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\Santosh\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:11093}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 40e2611d13c6e9286be69de6f46cd7c1
-*** Element info: {Using=xpath, value=//*[@id=&apos;hplogo&apos;]/div[2]}
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: false, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:7561/, nativeEvents: true, requireWindowFocus: true}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: e60a3638-9063-4c50-9592-6e53e38749fb
+*** Element info: {Using=xpath, value=//*[@id=&apos;react-root&apos;]//div/span[contains(text(),&apos;Profile&apos;)]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -32,9 +36,57 @@ Session ID: 40e2611d13c6e9286be69de6f46cd7c1
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at ExtentReportListener.ExtentReporterNG.verifyLogo(ExtentReporterNG.java:91)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+	at Utils.Utilities.highLightElement(Utilities.java:17)
+	at Pages.twitLoginPage.navigateToProfile(twitLoginPage.java:62)
+	at TestCases.TC4_twitLoginIE.navigateToProfile(TC4_twitLoginIE.java:33)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
 ... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">ExtentReportListener.ExtentReporterNG#verifyTitle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">TestCases.TC4_twitLoginIE#twitterLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //input[@name=&apos;session[username_or_email]&apos; and @class=&apos;js-username-field email-input js-initial-focus&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;SANTOSH-PC&apos;, ip: &apos;192.168.0.8&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_191&apos;
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: false, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:7561/, nativeEvents: true, requireWindowFocus: true}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: e60a3638-9063-4c50-9592-6e53e38749fb
+*** Element info: {Using=xpath, value=//input[@name=&apos;session[username_or_email]&apos; and @class=&apos;js-username-field email-input js-initial-focus&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+	at Utils.Utilities.highLightElement(Utilities.java:17)
+	at Pages.twitLoginPage.loginToTwitterAccount(twitLoginPage.java:69)
+	at TestCases.TC4_twitLoginIE.twitterLogin(TC4_twitLoginIE.java:28)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
