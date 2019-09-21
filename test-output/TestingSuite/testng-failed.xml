@@ -2,16 +2,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [TestingSuite]">
   <listeners>
-    <listener class-name="ExtentReportListener.ExtentReporterNG"/>
+    <listener class-name="Listeners.CustomListeners"/>
   </listeners>
   <test thread-count="5" name="TC#2(failed)">
     <classes>
       <class name="TestCases.TC4_twitLoginIE">
         <methods>
-          <include name="navigateToProfile"/>
-          <include name="launchBrowser"/>
-          <include name="twitterLogin"/>
-          <include name="tearDown"/>
+          <include name="launchBrowser_IE"/>
+          <include name="tearDown_IE"/>
+          <include name="navigateToProfile_IE"/>
         </methods>
       </class> <!-- TestCases.TC4_twitLoginIE -->
     </classes>

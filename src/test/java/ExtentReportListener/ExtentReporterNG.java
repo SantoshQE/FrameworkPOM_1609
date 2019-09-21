@@ -3,6 +3,7 @@ package ExtentReportListener;
 import Config.TestBase;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
@@ -23,6 +24,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
+import static com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath;
 
 public class ExtentReporterNG implements IReporter
 {
@@ -54,22 +57,34 @@ public class ExtentReporterNG implements IReporter
             for (ISuiteResult r : result.values())
             {
                 ITestContext context = r.getTestContext();
-                buildTestNodes(context.getPassedTests(), Status.PASS);
-                buildTestNodes(context.getFailedTests(), Status.FAIL);
-                buildTestNodes(context.getSkippedTests(), Status.SKIP);
+                try {
+                    buildTestNodes(context.getPassedTests(), Status.PASS);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    buildTestNodes(context.getFailedTests(), Status.FAIL);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    buildTestNodes(context.getSkippedTests(), Status.SKIP);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
         extent.flush();
       //  extent.close();
     }
 
-    private void buildTestNodes(IResultMap tests, Status status)
-    {
+    private void buildTestNodes(IResultMap tests, Status status) throws IOException {
         ExtentTest test;
 
         if (tests.size() > 0) {
             for (ITestResult result : tests.getAllResults())
             {
+
                // test = extent.startTest(result.getMethod().getMethodName());
                 test = extent.createTest(result.getMethod().getMethodName());
                // test.getModel().setStartTime(test.getModel().getStartTime());
@@ -82,6 +97,7 @@ public class ExtentReporterNG implements IReporter
                 if (result.getThrowable() != null)
                     message = result.getThrowable().getMessage();
                 test.log(status, message);
+
                 //extent.endTest(test);
             }
         }
@@ -116,6 +132,7 @@ public class ExtentReporterNG implements IReporter
             //We do pass the path captured by this method in to the extent reports using "logger.addScreenCapture" method.
             //String Scrnshot=TakeScreenshot.captuerScreenshot(driver,"TestCaseFailed");
             String screenshotPath = getScreenShot(TestBase.driver, result.getName());
+          //  MediaEntityModelProvider screenshot = createScreenCaptureFromPath(getScreenShot(TestBase.driver, result.getName())).build();
             //To add it in the extent report
             // logger.fail("Test Case Failed Snapshot is at below " + logger.addScreenCaptureFromPath(screenshotPath.toString()));
             logger.fail("Test Case Failed Snapshot is at below " + logger.addScreenCaptureFromPath(screenshotPath,"Test Failed"));
@@ -128,6 +145,7 @@ public class ExtentReporterNG implements IReporter
         {
             logger.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
             String screenshotPath = getScreenShot(TestBase.driver, result.getName());
+           // MediaEntityModelProvider screenshot = createScreenCaptureFromPath(getScreenShot(TestBase.driver, result.getName())).build();
             logger.pass("Test Case passed Snapshot is at below " + logger.addScreenCaptureFromPath(screenshotPath,"Test Passed"));
             logger.addScreenCaptureFromPath(screenshotPath,"Test Passed");
         }
@@ -138,5 +156,6 @@ public class ExtentReporterNG implements IReporter
     public void endReport()
     {
         extent.flush();
+
     }
 }

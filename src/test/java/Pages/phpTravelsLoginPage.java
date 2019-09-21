@@ -1,7 +1,7 @@
 package Pages;
 
 import ObjectRepository.Phptravels_OR;
-import Utils.Utilities;
+import Utils.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -62,13 +62,13 @@ public class phpTravelsLoginPage
     }
     public void phpTravelsAdminLogin(String userName, String pwd)
     {
-        Utilities.highLightElement(driver,phpTravels_AdminUserName);
+        TestUtil.highLightElement(driver,phpTravels_AdminUserName);
         phpTravels_AdminUserName.sendKeys(userName);
-        Utilities.highLightElement(driver,phpTravels_AdminPwd);
+        TestUtil.highLightElement(driver,phpTravels_AdminPwd);
         phpTravels_AdminPwd.sendKeys(pwd);
        // System.out.println(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        Utilities.highLightElement(driver,phpTravels_btnAdminLogin);
+        TestUtil.highLightElement(driver,phpTravels_btnAdminLogin);
         phpTravels_btnAdminLogin.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -77,7 +77,7 @@ public class phpTravelsLoginPage
         try
         {
             boolean logoutDisplayed = phpTravels_btnLogout.isDisplayed();
-            Utilities.highLightElement(driver,phpTravels_AdminDashboard);
+            TestUtil.highLightElement(driver,phpTravels_AdminDashboard);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             phpTravels_AdminDashboard.click();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -91,10 +91,10 @@ public class phpTravelsLoginPage
     {
         try
         {
-            Utilities.highLightElement(driver,phpTravels_AdminLogout);
+            TestUtil.highLightElement(driver,phpTravels_AdminLogout);
             boolean logoutDisplayed = phpTravels_AdminLogout.isDisplayed();
            // Assert.assertNotNull("logout object search returned null",logoutDisplayed);
-            Utilities.highLightElement(driver,phpTravels_AdminUpdates);
+            TestUtil.highLightElement(driver,phpTravels_AdminUpdates);
             phpTravels_AdminUpdates.click();
         }
         catch (Exception exp)

@@ -2,7 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestingSuite" parallel="none">
     <listeners>
-        <listener class-name="ExtentReportListener.ExtentReporterNG" />
+       <!-- <listener class-name="ExtentReportListener.ExtentReporterNG" />-->
+        <listener class-name="Listeners.CustomListeners"></listener>
     </listeners>
     <test name="TC#1">
         <classes>

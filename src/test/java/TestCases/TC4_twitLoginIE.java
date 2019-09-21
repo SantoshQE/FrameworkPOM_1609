@@ -15,7 +15,7 @@ public class TC4_twitLoginIE extends TestBase
 
     @BeforeTest
     @Description("Call testbase class and open browser")
-    public void launchBrowser()
+    public void launchBrowser_IE()
     {
         TestBase.open_Browser("IE");
         twtLoginPg = new twitLoginPage(driver);
@@ -23,17 +23,17 @@ public class TC4_twitLoginIE extends TestBase
     }
     @Test(priority = 1)
     @Description("Navigate to twitter profile page")
-    public void twitterLogin() throws Throwable
+    public void twitterLogin_IE() throws Throwable
     {
         twtLoginPg.loginToTwitterAccount("9967887510","Tcs@19831");
     }
     @Test(priority = 2)
     @Description("Navigate to twitter profile page")
-    public void navigateToProfile() throws Throwable {
+    public void navigateToProfile_IE() throws Throwable {
         twtLoginPg.navigateToProfile();
     }
     @AfterTest()
-    public void tearDown()
+    public void tearDown_IE()
     {
         driver.close();
     }

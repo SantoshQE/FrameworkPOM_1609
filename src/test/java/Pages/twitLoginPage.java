@@ -1,9 +1,7 @@
 package Pages;
 
-import ExtentReportListener.ExtentReporterNG;
 import ObjectRepository.Twitter_OR;
-import Utils.Utilities;
-import com.aventstack.extentreports.ExtentReports;
+import Utils.TestUtil;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,15 +13,13 @@ import java.util.concurrent.TimeUnit;
 
 public class twitLoginPage
 {
-
     public static WebDriver driver;
     public twitLoginPage(WebDriver driver)
     {
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
-    ExtentReporterNG ExtentRp = new ExtentReporterNG();
-
+   // ExtentReporterNG ExtentRp = new ExtentReporterNG();
     @FindBy(xpath =  Twitter_OR.TwitterSite )
     public WebElement TwitterSite;
     @FindBy(xpath =  Twitter_OR.twit_username )
@@ -63,11 +59,11 @@ public class twitLoginPage
     @Step("navigateToProfile - twitLoginPage")
     public void navigateToProfile()
     {
-        ExtentRp.logger = ExtentRp.extent.createTest("Navigate To Profile Link Check");
-        Utilities.highLightElement(driver,twit_ProfileLink);
-        ExtentRp.logger.createNode("Profile Link is Present");
+      //  ExtentRp.logger = ExtentRp.extent.createTest("Navigate To Profile Link Check");
+        TestUtil.highLightElement(driver,twit_ProfileLink);
+     //   ExtentRp.logger.createNode("Profile Link is Present");
         Assert.assertTrue(twit_ProfileLink.isDisplayed());
-        ExtentRp.logger.createNode("Profile Link is NOT Present");
+     //   ExtentRp.logger.createNode("Profile Link is NOT Present");
         try
         {
             Assert.assertTrue(twit_ProfileLink.isDisplayed());
@@ -82,15 +78,15 @@ public class twitLoginPage
     @Step("loginToTwitterAccount - twitLoginPage with username : {0} and password : {1}")
     public void loginToTwitterAccount(String userName,String pwd)
     {
-        ExtentRp.logger = ExtentRp.extent.createTest("To verify Google Logo");
-        Utilities.highLightElement(driver,twit_username);
+       // ExtentRp.logger = ExtentRp.extent.createTest("To verify Google Logo");
+        TestUtil.highLightElement(driver,twit_username);
         twit_username.sendKeys(userName);
-        Utilities.highLightElement(driver,twit_password);
+        TestUtil.highLightElement(driver,twit_password);
         twit_password.sendKeys(pwd);
-        Utilities.highLightElement(driver,twit_BtnLogin);
+        TestUtil.highLightElement(driver,twit_BtnLogin);
         twit_BtnLogin.click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        ExtentRp.logger.createNode("loginToTwitterAccount");
+       // ExtentRp.logger.createNode("loginToTwitterAccount");
 
 
     }

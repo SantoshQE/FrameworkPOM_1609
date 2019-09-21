@@ -1,5 +1,8 @@
 package Config;
 
+import ExtentReportListener.ExtentManager;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -16,6 +19,8 @@ public class TestBase
     public  static EventFiringWebDriver e_driver;
    // public static WebEventListener eventListener;
     public  static DesiredCapabilities DCap;
+    public ExtentReports report = ExtentManager.getInstance();
+    public static ExtentTest test;
 
 /*    public TestBase()
 {

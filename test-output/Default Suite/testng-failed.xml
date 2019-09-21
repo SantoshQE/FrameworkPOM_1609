@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
   <test thread-count="5" name="SeleniumReports(failed)">
     <classes>
-      <class name="ExtentReportListener.ExtentReporterNG">
+      <class name="ExtentReportListener.ExtentReporterNG2">
         <methods>
-          <include name="endReport"/>
-          <include name="getResult"/>
           <include name="setup"/>
+          <include name="getResult"/>
           <include name="verifyLogo"/>
           <include name="startReport"/>
+          <include name="endReport"/>
         </methods>
-      </class> <!-- ExtentReportListener.ExtentReporterNG -->
+      </class> <!-- ExtentReportListener.ExtentReporterNG2 -->
     </classes>
   </test> <!-- SeleniumReports(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

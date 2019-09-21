@@ -4,6 +4,7 @@
 	<contentEntry url="file://$MODULE_DIR$">
 		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
 		<testFolder url="file://$MODULE_DIR$/src/test/resources"/>
+		<testFolder url="file://$MODULE_DIR$/src/resources/properties"/>
 		<excludeFolder url="file://$MODULE_DIR$/target"/>
 	</contentEntry>
 	<lib name="Maven: org.testng:testng:7.0.0" scope="TEST"/>
@@ -33,8 +34,9 @@
 	<lib name="Maven: org.eclipse.jetty:jetty-util:9.4.14.v20181114" scope="RUNTIME"/>
 	<lib name="Maven: org.eclipse.jetty:jetty-io:9.4.14.v20181114" scope="RUNTIME"/>
 	<lib name="Maven: org.slf4j:slf4j-log4j12:1.7.25" scope="RUNTIME"/>
-	<lib name="Maven: log4j:log4j:1.2.17" scope="RUNTIME"/>
 	<levels>
+		<level name="SikuliLibs" value="project"/>
+		<level name="SikuliLibs1" value="project"/>
 		<level name="Maven: org.seleniumhq.selenium:selenium-java:3.141.59" value="project"/>
 		<level name="Maven: org.seleniumhq.selenium:selenium-api:3.141.59" value="project"/>
 		<level name="Maven: org.seleniumhq.selenium:selenium-chrome-driver:3.141.59" value="project"/>
@@ -95,8 +97,13 @@
 		<level name="Maven: org.eclipse.jetty:jetty-util:9.4.14.v20181114" value="project"/>
 		<level name="Maven: org.eclipse.jetty:jetty-io:9.4.14.v20181114" value="project"/>
 		<level name="Maven: org.slf4j:slf4j-log4j12:1.7.25" value="project"/>
+		<level name="Maven: com.google.inject:guice:4.1.0" value="project"/>
+		<level name="Maven: javax.inject:javax.inject:1" value="project"/>
+		<level name="Maven: aopalliance:aopalliance:1.0" value="project"/>
 		<level name="Maven: log4j:log4j:1.2.17" value="project"/>
-		<level name="SikuliLibs" value="project"/>
-		<level name="SikuliLibs1" value="project"/>
+		<level name="Maven: javax.mail:mail:1.4.7" value="project"/>
+		<level name="Maven: javax.activation:activation:1.1" value="project"/>
+		<level name="Maven: mysql:mysql-connector-java:6.0.5" value="project"/>
+		<level name="Maven: dom4j:dom4j:1.1" value="project"/>
 	</levels>
 </component>

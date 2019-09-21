@@ -1,68 +1,141 @@
 package Utils;
 
-import org.apache.commons.io.FileUtils;
-/*import org.apache.commons.io.FileUtils;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;*/
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-
-import Config.TestBase;
-import org.testng.reporters.Files;
-
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.Date;
+import java.util.Hashtable;
 
-public class TestUtil extends TestBase
-{
+import Config.TestBase;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+import org.testng.annotations.DataProvider;
+
+public class TestUtil extends TestBase {
     public static long PAGE_LOAD_TIMEOUT = 20;
     public static long IMPLICIT_WAIT = 20;
-
     public static String TESTDATA_SHEET_PATH = "/YourDirectoryPath" + "/YourTestDataExclPath";
-
-   /* static Workbook book;
-    static Sheet sheet;*/
     static JavascriptExecutor js;
+	public static String screenshotPath;
+	public static String screenshotName;
+    public static WebDriver driver;
 
-
-    public void switchToFrame() {
-        driver.switchTo().frame("mainpanel");
+    public TestUtil(WebDriver driver)
+    {
+            this.driver = driver;
     }
-/*
-    public static Object[][] getTestData(String sheetName) {
-        FileInputStream file = null;
-        try {
-            file = new FileInputStream(TESTDATA_SHEET_PATH);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+
+    public static void highLightElement(WebDriver driver, WebElement element)
+    {
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
+        try
+        {
+            Thread.sleep(200);
         }
-        try {
-            book = WorkbookFactory.create(file);
-        } catch (InvalidFormatException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        catch (InterruptedException e)
+        {
+            System.out.println(e.getMessage());
         }
-        sheet = book.getSheet(sheetName);
-        Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
-        // System.out.println(sheet.getLastRowNum() + "--------" +
-        // sheet.getRow(0).getLastCellNum());
-        for (int i = 0; i < sheet.getLastRowNum(); i++) {
-            for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
-                data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
-                // System.out.println(data[i][k]);
+        js.executeScript("arguments[0].setAttribute('style','border: solid 2px white');", element);
+    }
+	public static void captureScreenshot() throws IOException
+    {
+		File scrFile = ((TakesScreenshot) TestBase.driver).getScreenshotAs(OutputType.FILE);
+		Date d = new Date();
+		screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
+		FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName));
+
+	}
+
+/*	@DataProvider(name="dp")
+	public Object[][] getData(Method m) {
+
+		String sheetName = m.getName();
+		int rows = excel.getRowCount(sheetName);
+		int cols = excel.getColumnCount(sheetName);
+
+		Object[][] data = new Object[rows - 1][1];
+		
+		Hashtable<String,String> table = null;
+
+		for (int rowNum = 2; rowNum <= rows; rowNum++) { // 2
+
+			table = new Hashtable<String,String>();
+			
+			for (int colNum = 0; colNum < cols; colNum++) {
+
+				// data[0][0]
+				table.put(excel.getCellData(sheetName, colNum, 1), excel.getCellData(sheetName, colNum, rowNum));
+				data[rowNum - 2][0] = table;
+			}
+
+		}
+
+		return data;
+
+	}*/
+
+/*	public static boolean isTestRunnable(String testName, ExcelReader excel)
+	{
+		
+		String sheetName="test_suite";
+		int rows = excel.getRowCount(sheetName);
+		
+		
+		for(int rNum=2; rNum<=rows; rNum++){
+			
+			String testCase = excel.getCellData(sheetName, "TCID", rNum);
+			
+			if(testCase.equalsIgnoreCase(testName)){
+				
+				String runmode = excel.getCellData(sheetName, "Runmode", rNum);
+				
+				if(runmode.equalsIgnoreCase("Y"))
+					return true;
+				else
+					return false;
+			}
+			
+			
+		}
+		return false;
+	}*/
+public void switchToFrame() {
+    driver.switchTo().frame("mainpanel");
+}
+    /*
+        public static Object[][] getTestData(String sheetName) {
+            FileInputStream file = null;
+            try {
+                file = new FileInputStream(TESTDATA_SHEET_PATH);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
             }
-        }
-        return data;
-    }*/
+            try {
+                book = WorkbookFactory.create(file);
+            } catch (InvalidFormatException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            sheet = book.getSheet(sheetName);
+            Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+            // System.out.println(sheet.getLastRowNum() + "--------" +
+            // sheet.getRow(0).getLastCellNum());
+            for (int i = 0; i < sheet.getLastRowNum(); i++) {
+                for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
+                    data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
+                    // System.out.println(data[i][k]);
+                }
+            }
+            return data;
+        }*/
     public static void takeScreenshotAtEndOfTest() throws IOException
     {
-    File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-    String currentDir = System.getProperty("user.dir");
-    FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
+        File scrFile = ((TakesScreenshot) TestBase.driver).getScreenshotAs(OutputType.FILE);
+        String currentDir = System.getProperty("user.dir");
+        FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
     }
     public static void runTimeInfo(String messageType, String message) throws InterruptedException {
         js = (JavascriptExecutor) driver;

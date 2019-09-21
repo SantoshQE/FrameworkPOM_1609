@@ -1,17 +1,12 @@
 package Pages;
 
 import ObjectRepository.Phptravels_OR;
-import Utils.Utilities;
 //import cucumber.api.DataTable;
+import Utils.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 //import cucumber.api.DataTable;
 
@@ -92,13 +87,13 @@ public class phpTravelsHomePage
     }
     public void navigateToAccounts()
     {
-        Utilities.highLightElement(driver,phpTravels_AdminAccounts);
+        TestUtil.highLightElement(driver,phpTravels_AdminAccounts);
         phpTravels_AdminAccounts.click();
     }
     public void navigateToCustomers()
     {
         navigateToAccounts();
-        Utilities.highLightElement(driver,phpTravels_AdminCustomers);
+        TestUtil.highLightElement(driver,phpTravels_AdminCustomers);
         phpTravels_AdminCustomers.click();
     }
    /* public void addNewCustomer(DataTable dt) throws InterruptedException {

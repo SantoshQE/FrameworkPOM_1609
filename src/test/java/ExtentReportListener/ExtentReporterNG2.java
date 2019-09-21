@@ -125,7 +125,8 @@ public class ExtentReporterNG2 extends TestBase implements IReporter
     }
 
     @AfterTest
-    public void endReport() {
+    public void endReport()
+    {
         extent.flush();
     }
 

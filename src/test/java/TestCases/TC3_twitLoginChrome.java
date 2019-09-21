@@ -15,24 +15,24 @@ public class TC3_twitLoginChrome  extends TestBase
     public static TestBase init ;
 
     @BeforeTest(description = "--TestNGDescription :-- Launch web browser")
-    public void launchBrowser()
+    public void launchBrowser_Chrome()
     {
         TestBase.open_Browser("Chrome");
         twtLoginPg = new twitLoginPage(driver);
         twtLoginPg.launchTwitterLoginPg("https://twitter.com/login?lang=en");
     }
     @Test(priority = 1,description ="--TestNGDescription :-- Log into twitter account" )
-    public void twitterLogin() throws Throwable
+    public void twitterLogin_Chrome() throws Throwable
     {
         twtLoginPg.loginToTwitterAccount("9967887510","Tcs@1983");
     }
     @Test(priority = 2,description ="--TestNGDescription :-- Navigate to twitter profile page" )
-    public void navigateToProfile() throws Throwable {
+    public void navigateToProfile_Chrome() throws Throwable {
         twtLoginPg.navigateToProfile();
        // TestUtil.takeScreenshotAtEndOfTest();
     }
     @AfterTest()
-    public void tearDown()
+    public void tearDown_Chrome()
     {
         driver.close();
     }
