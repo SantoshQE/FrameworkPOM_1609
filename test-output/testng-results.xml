@@ -1,56 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
   <reporter-output>
-    <line>
-      <![CDATA[Click to see Screenshot]]>
-    </line>
-    <line>
-      <![CDATA[<a target="_blank" href=Sat_Sep_21_23_48_41_IST_2019.jpg>Screenshot</a>]]>
-    </line>
-    <line>
-      <![CDATA[<br>]]>
-    </line>
-    <line>
-      <![CDATA[<br>]]>
-    </line>
-    <line>
-      <![CDATA[<a target="_blank" href=Sat_Sep_21_23_48_41_IST_2019.jpg><img src=Sat_Sep_21_23_48_41_IST_2019.jpg height=200 width=200></img></a>]]>
-    </line>
   </reporter-output>
-  <suite name="TestingSuite" duration-ms="37987" started-at="2019-09-21T23:48:03 IST" finished-at="2019-09-21T23:48:41 IST">
+  <suite name="TestingSuite" duration-ms="42409" started-at="2019-09-22T01:20:59 IST" finished-at="2019-09-22T01:21:42 IST">
     <groups>
     </groups>
-    <test name="TC#1" duration-ms="18655" started-at="2019-09-21T23:48:03 IST" finished-at="2019-09-21T23:48:22 IST">
+    <test name="TC#1" duration-ms="22379" started-at="2019-09-22T01:20:59 IST" finished-at="2019-09-22T01:21:22 IST">
       <class name="TestCases.TC3_twitLoginChrome">
-        <test-method status="PASS" signature="launchBrowser_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@29cfd92b]" name="launchBrowser_Chrome" is-config="true" duration-ms="8704" started-at="2019-09-21T23:48:03 IST" description="--TestNGDescription :-- Launch web browser" finished-at="2019-09-21T23:48:12 IST">
+        <test-method status="PASS" signature="launchBrowser_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@2755d705]" name="launchBrowser_Chrome" is-config="true" duration-ms="12383" started-at="2019-09-22T01:21:00 IST" description="--TestNGDescription :-- Launch web browser" finished-at="2019-09-22T01:21:12 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser_Chrome -->
-        <test-method status="PASS" signature="twitterLogin_Chrome()[pri:1, instance:TestCases.TC3_twitLoginChrome@29cfd92b]" name="twitterLogin_Chrome" duration-ms="3592" started-at="2019-09-21T23:48:12 IST" description="--TestNGDescription :-- Log into twitter account" finished-at="2019-09-21T23:48:15 IST">
+        <test-method status="PASS" signature="twitterLogin_Chrome()[pri:1, instance:TestCases.TC3_twitLoginChrome@2755d705]" name="twitterLogin_Chrome" duration-ms="4021" started-at="2019-09-22T01:21:12 IST" description="--TestNGDescription :-- Log into twitter account" finished-at="2019-09-22T01:21:16 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- twitterLogin_Chrome -->
-        <test-method status="PASS" signature="navigateToProfile_Chrome()[pri:2, instance:TestCases.TC3_twitLoginChrome@29cfd92b]" name="navigateToProfile_Chrome" duration-ms="1976" started-at="2019-09-21T23:48:17 IST" description="--TestNGDescription :-- Navigate to twitter profile page" finished-at="2019-09-21T23:48:19 IST">
+        <test-method status="PASS" signature="navigateToProfile_Chrome()[pri:2, instance:TestCases.TC3_twitLoginChrome@2755d705]" name="navigateToProfile_Chrome" duration-ms="1521" started-at="2019-09-22T01:21:18 IST" description="--TestNGDescription :-- Navigate to twitter profile page" finished-at="2019-09-22T01:21:19 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToProfile_Chrome -->
-        <test-method status="PASS" signature="tearDown_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@29cfd92b]" name="tearDown_Chrome" is-config="true" duration-ms="2298" started-at="2019-09-21T23:48:19 IST" finished-at="2019-09-21T23:48:22 IST">
+        <test-method status="PASS" signature="tearDown_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@2755d705]" name="tearDown_Chrome" is-config="true" duration-ms="2238" started-at="2019-09-22T01:21:20 IST" finished-at="2019-09-22T01:21:22 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown_Chrome -->
       </class> <!-- TestCases.TC3_twitLoginChrome -->
     </test> <!-- TC#1 -->
-    <test name="TC#2" duration-ms="19254" started-at="2019-09-21T23:48:22 IST" finished-at="2019-09-21T23:48:41 IST">
+    <test name="TC#2" duration-ms="19952" started-at="2019-09-22T01:21:22 IST" finished-at="2019-09-22T01:21:42 IST">
       <class name="TestCases.TC4_twitLoginIE">
-        <test-method status="PASS" signature="launchBrowser_IE()[pri:0, instance:TestCases.TC4_twitLoginIE@2fd1731c]" name="launchBrowser_IE" is-config="true" duration-ms="2922" started-at="2019-09-21T23:48:22 IST" finished-at="2019-09-21T23:48:25 IST">
+        <test-method status="PASS" signature="launchBrowser_IE()[pri:0, instance:TestCases.TC4_twitLoginIE@7689ddef]" name="launchBrowser_IE" is-config="true" duration-ms="2943" started-at="2019-09-22T01:21:22 IST" finished-at="2019-09-22T01:21:25 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser_IE -->
-        <test-method status="PASS" signature="twitterLogin_IE()[pri:1, instance:TestCases.TC4_twitLoginIE@2fd1731c]" name="twitterLogin_IE" duration-ms="10579" started-at="2019-09-21T23:48:25 IST" finished-at="2019-09-21T23:48:35 IST">
+        <test-method status="PASS" signature="twitterLogin_IE()[pri:1, instance:TestCases.TC4_twitLoginIE@7689ddef]" name="twitterLogin_IE" duration-ms="11447" started-at="2019-09-22T01:21:25 IST" finished-at="2019-09-22T01:21:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- twitterLogin_IE -->
-        <test-method status="FAIL" signature="navigateToProfile_IE()[pri:2, instance:TestCases.TC4_twitLoginIE@2fd1731c]" name="navigateToProfile_IE" duration-ms="5320" started-at="2019-09-21T23:48:35 IST" finished-at="2019-09-21T23:48:40 IST">
+        <test-method status="FAIL" signature="navigateToProfile_IE()[pri:2, instance:TestCases.TC4_twitLoginIE@7689ddef]" name="navigateToProfile_IE" duration-ms="5156" started-at="2019-09-22T01:21:36 IST" finished-at="2019-09-22T01:21:42 IST">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[Unable to find element with xpath == //*[@id='react-root']//div/span[contains(text(),'Profile')]
@@ -58,8 +43,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SANTOSH-PC', ip: '192.168.0.8', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_191'
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: false, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:5426/, nativeEvents: true, requireWindowFocus: true}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: f6cf2330-f3ab-4741-a107-9be376db732a
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: false, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:26920/, nativeEvents: true, requireWindowFocus: true}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 9ccee761-84f9-489b-8dd0-df16a6d88ea9
 *** Element info: {Using=xpath, value=//*[@id='react-root']//div/span[contains(text(),'Profile')]}]]>
             </message>
             <full-stacktrace>
@@ -68,8 +53,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SANTOSH-PC', ip: '192.168.0.8', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_191'
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: false, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:5426/, nativeEvents: true, requireWindowFocus: true}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: f6cf2330-f3ab-4741-a107-9be376db732a
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: false, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:26920/, nativeEvents: true, requireWindowFocus: true}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 9ccee761-84f9-489b-8dd0-df16a6d88ea9
 *** Element info: {Using=xpath, value=//*[@id='react-root']//div/span[contains(text(),'Profile')]}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -87,7 +72,7 @@ at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy10.getWrappedElement(Unknown Source)
+at com.sun.proxy.$Proxy11.getWrappedElement(Unknown Source)
 at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
 at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
 at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
@@ -131,27 +116,16 @@ at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
-            <line>
-              <![CDATA[Click to see Screenshot]]>
-            </line>
-            <line>
-              <![CDATA[<a target="_blank" href=Sat_Sep_21_23_48_41_IST_2019.jpg>Screenshot</a>]]>
-            </line>
-            <line>
-              <![CDATA[<br>]]>
-            </line>
-            <line>
-              <![CDATA[<br>]]>
-            </line>
-            <line>
-              <![CDATA[<a target="_blank" href=Sat_Sep_21_23_48_41_IST_2019.jpg><img src=Sat_Sep_21_23_48_41_IST_2019.jpg height=200 width=200></img></a>]]>
-            </line>
           </reporter-output>
         </test-method> <!-- navigateToProfile_IE -->
-        <test-method status="PASS" signature="tearDown_IE()[pri:0, instance:TestCases.TC4_twitLoginIE@2fd1731c]" name="tearDown_IE" is-config="true" duration-ms="141" started-at="2019-09-21T23:48:41 IST" finished-at="2019-09-21T23:48:41 IST">
+        <test-method status="PASS" signature="tearDown_IE()[pri:0, instance:TestCases.TC4_twitLoginIE@7689ddef]" name="tearDown_IE" is-config="true" duration-ms="47" started-at="2019-09-22T01:21:42 IST" finished-at="2019-09-22T01:21:42 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown_IE -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.TC4_twitLoginIE@7689ddef]" name="tearDown" is-config="true" duration-ms="516" started-at="2019-09-22T01:21:42 IST" finished-at="2019-09-22T01:21:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- TestCases.TC4_twitLoginIE -->
     </test> <!-- TC#2 -->
   </suite> <!-- TestingSuite -->

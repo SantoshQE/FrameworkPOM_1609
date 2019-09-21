@@ -7,6 +7,8 @@ import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 import Config.TestBase;
 import Utils.TestUtil;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.Markup;
 import org.testng.ISuite;
@@ -15,7 +17,10 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+
 import org.testng.SkipException;
+
+import static com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath;
 /*import TestUtil.MonitoringMail;
 import com.w2a.utilities.TestConfig;*/
 
@@ -34,7 +39,8 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
         // TODO Auto-generated method stub
 
     }
-    public void onTestFailure(ITestResult arg0) {
+    public void onTestFailure(ITestResult arg0)
+    {
         System.setProperty("org.uncommons.reportng.escape-output","false");
         try {
             TestUtil.captureScreenshot();
@@ -43,19 +49,28 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
             e.printStackTrace();
         }
         test.log(Status.FAIL, arg0.getName().toUpperCase()+" Failed with exception : "+arg0.getThrowable());
-        // test.log(Status.FAIL, test.addScreenCaptureFromPath(TestUtil.screenshotName));
-        test.log(Status.FAIL,"");
+        try {
+            test.log(Status.FAIL, "Snapshot below: " + test.addScreenCaptureFromPath(TestUtil.screenshotName));
+            test.log(Status.FAIL, "Snapshot name is : "+TestUtil.screenshotName.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         try {
             test.addScreenCaptureFromPath(TestUtil.screenshotName);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Reporter.log("Click to see Screenshot");
+        try {
+            test.addScreenCaptureFromPath(TestUtil.screenshotName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+      /*  Reporter.log("Click to see Screenshot");
         Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+">Screenshot</a>");
         Reporter.log("<br>");
         Reporter.log("<br>");
         Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=200 width=200></img></a>");
-        //report.endTest(test);
+        //report.endTest(test);*/
         report.flush();
     }
     public void onTestSkipped(ITestResult arg0)

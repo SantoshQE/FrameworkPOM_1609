@@ -43,7 +43,7 @@ public class TestUtil extends TestBase {
     {
 		File scrFile = ((TakesScreenshot) TestBase.driver).getScreenshotAs(OutputType.FILE);
 		Date d = new Date();
-		screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
+		screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".png";
 		FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName));
 
 	}
