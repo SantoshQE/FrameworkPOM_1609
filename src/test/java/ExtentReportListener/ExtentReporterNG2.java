@@ -1,15 +1,6 @@
 package ExtentReportListener;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
 import Config.TestBase;
-import Pages.twitLoginPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -22,16 +13,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.*;
+import org.testng.Assert;
+import org.testng.IReporter;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
-import org.testng.xml.XmlSuite;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /*import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;*/
 
-public class ExtentReporterNG extends TestBase implements IReporter
+public class ExtentReporterNG2 extends TestBase implements IReporter
 {
     public WebDriver driver;
     public ExtentHtmlReporter htmlReporter;

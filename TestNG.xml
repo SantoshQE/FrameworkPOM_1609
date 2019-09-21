@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestingSuite" parallel="none">
+    <listeners>
+        <listener class-name="TestCases" />
+    </listeners>
     <test name="TC#1">
         <classes>
             <class name="TestCases.TC3_twitLoginChrome"/>
