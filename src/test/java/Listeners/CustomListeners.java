@@ -20,6 +20,7 @@ import org.testng.Reporter;
 
 import org.testng.SkipException;
 
+import static Utils.TestUtil.captureScreenshot;
 import static com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath;
 /*import TestUtil.MonitoringMail;
 import com.w2a.utilities.TestConfig;*/
@@ -39,38 +40,38 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
         // TODO Auto-generated method stub
 
     }
+
     public void onTestFailure(ITestResult arg0)
     {
         System.setProperty("org.uncommons.reportng.escape-output","false");
         try {
-            TestUtil.captureScreenshot();
+            captureScreenshot();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         test.log(Status.FAIL, arg0.getName().toUpperCase()+" Failed with exception : "+arg0.getThrowable());
         try {
             test.log(Status.FAIL, "Snapshot below: " + test.addScreenCaptureFromPath(TestUtil.screenshotName));
-            test.log(Status.FAIL, "Snapshot name is : "+TestUtil.screenshotName.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
+        test.log(Status.FAIL, "Snapshot name is : "+TestUtil.screenshotName.toString());
         try {
             test.addScreenCaptureFromPath(TestUtil.screenshotName);
         } catch (IOException e) {
             e.printStackTrace();
         }
         try {
-            test.addScreenCaptureFromPath(TestUtil.screenshotName);
+            test.log(Status.FAIL, "Snapshot path below: " + test.addScreenCaptureFromPath(System.getProperty("user.dir") + "/Screenshots/"+"Sun_Sep_22_01_28_02_IST_2019.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-      /*  Reporter.log("Click to see Screenshot");
+        Reporter.log("Click to see Screenshot");
         Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+">Screenshot</a>");
         Reporter.log("<br>");
         Reporter.log("<br>");
-        Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=200 width=200></img></a>");
-        //report.endTest(test);*/
+        Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=500 width=500></img></a>");
+        //report.endTest(test);
         report.flush();
     }
     public void onTestSkipped(ITestResult arg0)
