@@ -30,6 +30,7 @@ public class TestBase
     public static Logger log = Logger.getLogger("devpinoyLogger");
     public  static DesiredCapabilities DCap;
     public ExtentReports report = ExtentManager.getInstance();
+    public ExtentManager logger;
     public static ExtentTest test;
 
 /*    public TestBase()

@@ -2,14 +2,11 @@ package Utils;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.util.Date;
-import java.util.Hashtable;
 
 import Config.TestBase;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.testng.annotations.DataProvider;
 
 public class TestUtil extends TestBase {
     public static long PAGE_LOAD_TIMEOUT = 20;
@@ -39,13 +36,17 @@ public class TestUtil extends TestBase {
         }
         js.executeScript("arguments[0].setAttribute('style','border: solid 2px white');", element);
     }
-	public static void captureScreenshot() throws IOException
+	public static String captureScreenshot() throws IOException
     {
 		File scrFile = ((TakesScreenshot) TestBase.driver).getScreenshotAs(OutputType.FILE);
 		Date d = new Date();
 		screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".png";
-		FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName));
-
+        String destination = System.getProperty("user.dir") + "\\Screenshots\\" + screenshotName;
+        File finalDestination = new File(destination);
+        FileUtils.copyFile(scrFile, finalDestination);
+        screenshotPath = destination;
+        return screenshotPath;
+		//FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName));
 	}
 
 /*	@DataProvider(name="dp")
