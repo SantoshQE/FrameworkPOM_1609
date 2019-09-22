@@ -16,4 +16,16 @@
       </class> <!-- TestCases.TC4_twitLoginIE -->
     </classes>
   </test> <!-- TC#2(failed) -->
+  <test thread-count="5" name="TC#3(failed)">
+    <classes>
+      <class name="TestCases.TC4_twitLoginIE">
+        <methods>
+          <include name="launchBrowser_IE"/>
+          <include name="tearDown_IE"/>
+          <include name="navigateToProfile_IE"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestCases.TC4_twitLoginIE -->
+    </classes>
+  </test> <!-- TC#3(failed) -->
 </suite> <!-- Failed suite [TestingSuite] -->

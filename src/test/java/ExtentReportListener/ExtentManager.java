@@ -28,7 +28,8 @@ public class ExtentManager {
             ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/CustomReports/QEExtentReport.html");
             extent = new ExtentReports();
             extent.attachReporter(htmlReporter);
-            extent.setSystemInfo("HostName", "QE Test");
+            extent.setSystemInfo("ReportName", "QE Automation Test Report");
+            extent.setSystemInfo("HostName", "ABN Test");
             extent.setSystemInfo("Environment", "QA");
             extent.setSystemInfo("UserName", "Santosh Pandhare");
             htmlReporter.config().setDocumentTitle("QE Test Report");
@@ -36,6 +37,9 @@ public class ExtentManager {
             htmlReporter.config().setReportName("QE Test Report");
             // Dark Theme
           //  htmlReporter.config().setTheme(Theme.STANDARD);
+
+
+
 
         }
         return extent;

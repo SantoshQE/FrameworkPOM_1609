@@ -3,7 +3,7 @@
     <configuration>
         <!-- report theme -->
         <!-- standard, dark -->
-        <theme>standard</theme>
+        <theme>Dark</theme>
 
         <!-- document encoding -->
         <!-- defaults to UTF-8 -->
@@ -35,7 +35,7 @@
         <!-- custom styles -->
         <styles>
             <![CDATA[
-
+                .featherlight-image {   border: 1px solid #f6f7fa;   cursor: zoom-in;    width: 75px; }
             ]]>
         </styles>
     </configuration>

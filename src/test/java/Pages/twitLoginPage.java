@@ -62,7 +62,7 @@ public class twitLoginPage
       //  ExtentRp.logger = ExtentRp.extent.createTest("Navigate To Profile Link Check");
         TestUtil.highLightElement(driver,twit_ProfileLink);
      //   ExtentRp.logger.createNode("Profile Link is Present");
-        Assert.assertTrue(twit_ProfileLink.isDisplayed());
+        //Assert.assertTrue(twit_ProfileLink.isDisplayed());
      //   ExtentRp.logger.createNode("Profile Link is NOT Present");
         try
         {

@@ -17,10 +17,11 @@ public class TestUtil extends TestBase {
 	public static String screenshotName;
     public static WebDriver driver;
 
-    public TestUtil(WebDriver driver)
+/*   public TestUtil(WebDriver driver)
     {
-            this.driver = driver;
-    }
+        super();
+        this.driver = driver;
+    }*/
 
     public static void highLightElement(WebDriver driver, WebElement element)
     {

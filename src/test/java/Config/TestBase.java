@@ -10,7 +10,6 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
-
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
@@ -31,12 +30,12 @@ public class TestBase
     public  static DesiredCapabilities DCap;
     public ExtentReports report = ExtentManager.getInstance();
     public ExtentManager logger;
-    public static ExtentTest test;
+    public static ExtentTest extentTest;
 
-/*    public TestBase()
-{
-
-}*/
+/*    public TestBase(WebDriver driver)
+    {
+     this.driver = driver;
+    }*/
     public static void open_Browser(String browserName) {
         try {
             System.out.printf("Opening %s browser.\n", browserName);

@@ -15,4 +15,9 @@
             <class name="TestCases.TC4_twitLoginIE"/>
         </classes>
     </test>
+    <test name="TC#3">
+        <classes>
+            <class name="TestCases.TC4_twitLoginIE"/>
+        </classes>
+    </test>
 </suite>
