@@ -14,31 +14,29 @@ public class TC3_twitLoginChrome  extends TestBase
 {
     public static twitLoginPage twtLoginPg ;
     public static TestBase init ;
+    public static TestBase extentTestbase;
 
     @BeforeTest
     public void launchBrowser_Chrome()
     {
-       // test.assignCategory("Smoke");
         TestBase.open_Browser("Chrome");
         twtLoginPg = new twitLoginPage(driver);
         twtLoginPg.launchTwitterLoginPg("https://twitter.com/login?lang=en");
-        //extentTest.assignCategory("Regression");
+       // extentTestbase.assignCategory("Regression");
+      //  init = new TestBase();
     }
     @Test(priority = 1,description ="--TestNGDescription :-- Log into twitter account" )
     public void twitterLogin_Chrome() throws Throwable
     {
-        extentTest.assignCategory("Regression");
        // init.test.assignCategory("Smoke");
+//        extentTest.assignCategory("Regression");
         twtLoginPg.loginToTwitterAccount("9967887510","Tcs@1983");
-
     }
     @Test(priority = 2,description ="--TestNGDescription :-- Navigate to twitter profile page" )
     public void navigateToProfile_Chrome() throws Throwable {
        // init.test.assignCategory("Smoke");
-        extentTest.assignCategory("Regression");
+     //   extentTest.assignCategory("Regression");
         twtLoginPg.navigateToProfile();
-
-       // TestUtil.takeScreenshotAtEndOfTest();
     }
     @AfterTest()
     public void tearDown_Chrome()

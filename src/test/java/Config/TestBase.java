@@ -1,6 +1,8 @@
 package Config;
 
 import ExtentReportListener.ExtentManager;
+/*import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;*/
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
@@ -30,12 +32,13 @@ public class TestBase
     public  static DesiredCapabilities DCap;
     public ExtentReports report = ExtentManager.getInstance();
     public ExtentManager logger;
-    public static ExtentTest extentTest;
+   // public static ExtentTest extentTestbase;
 
 /*    public TestBase(WebDriver driver)
     {
-     this.driver = driver;
+        this.driver = driver;
     }*/
+
     public static void open_Browser(String browserName) {
         try {
             System.out.printf("Opening %s browser.\n", browserName);
@@ -84,14 +87,16 @@ public class TestBase
             System.setProperty("webdriver.gecko.driver", "/Users/naveenkhunteta/Documents/SeleniumServer/geckodriver");
             driver = new FirefoxDriver();
         }*/
-@AfterSuite
-public void tearDown()
-{
-    if (driver != null) {
-        driver.quit();
+    @AfterSuite
+    public void tearDown()
+    {
+        if (driver != null)
+        {
+            driver.quit();
+        }
+        log.debug("test execution completed !!!");
+       // report.flush();
     }
-    log.debug("test execution completed !!!");
-}
 }
 
 

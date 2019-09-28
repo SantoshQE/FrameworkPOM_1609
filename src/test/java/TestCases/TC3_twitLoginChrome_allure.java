@@ -7,6 +7,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,6 +16,8 @@ public class TC3_twitLoginChrome_allure extends TestBase
 {
     public static twitLoginPage twtLoginPg ;
     public static TestBase init ;
+
+
 
     @BeforeTest(description = "--TestNGDescription :-- Launch web browser")
     public void launchBrowser()

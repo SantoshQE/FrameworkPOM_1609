@@ -85,7 +85,16 @@ public class twitLoginPage
         twit_password.sendKeys(pwd);
         TestUtil.highLightElement(driver,twit_BtnLogin);
         twit_BtnLogin.click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
+        try
+        {
+            Assert.assertTrue(twit_HomeLink.isDisplayed());
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
        // ExtentRp.logger.createNode("loginToTwitterAccount");
 
 

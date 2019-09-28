@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-TestingSuite">
-                    <span class="test-stats">3 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods, 2 failed,   4 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content failed suite-TestingSuite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestingSuite" title="TestCases.TC4_twitLoginIE" hash-for-method="navigateToProfile_IE">navigateToProfile_IE</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestingSuite" title="TestCases.TC4_twitLoginIE" hash-for-method="navigateToProfile_IE">navigateToProfile_IE</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-TestingSuite" title="TestCases.TC3_twitLoginChromeNegative" hash-for-method="navigateToProfile_Chrome">navigateToProfile_Chrome</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-TestingSuite -->
@@ -121,22 +116,7 @@
                     <div class="method-list-content passed suite-TestingSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestingSuite" title="TestCases.TC3_twitLoginChrome" hash-for-method="navigateToProfile_Chrome">navigateToProfile_Chrome</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestingSuite" title="TestCases.TC3_twitLoginChrome" hash-for-method="twitterLogin_Chrome">twitterLogin_Chrome</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestingSuite" title="TestCases.TC4_twitLoginIE" hash-for-method="twitterLogin_IE">twitterLogin_IE</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestingSuite" title="TestCases.TC4_twitLoginIE" hash-for-method="twitterLogin_IE">twitterLogin_IE</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-TestingSuite" title="TestCases.TC3_twitLoginChromeNegative" hash-for-method="twitterLogin_Chrome">twitterLogin_Chrome</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-TestingSuite -->
@@ -154,101 +134,7 @@
           <div class="suite-TestingSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">TestCases.TC4_twitLoginIE</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="navigateToProfile_IE">
-                  </a> <!-- navigateToProfile_IE -->
-                  <span class="method-name">navigateToProfile_IE</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //*[@id=&apos;react-root&apos;]//div/span[contains(text(),&apos;Profile&apos;)]
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SANTOSH-PC&apos;, ip: &apos;192.168.0.8&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: false, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:18372/, nativeEvents: true, requireWindowFocus: true}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 9308ae5d-f536-4a3d-b962-25fd59af72fe
-*** Element info: {Using=xpath, value=//*[@id=&apos;react-root&apos;]//div/span[contains(text(),&apos;Profile&apos;)]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-	at Utils.TestUtil.highLightElement(TestUtil.java:29)
-	at Pages.twitLoginPage.navigateToProfile(twitLoginPage.java:63)
-	at TestCases.TC4_twitLoginIE.navigateToProfile_IE(TC4_twitLoginIE.java:37)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 30 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="navigateToProfile_IE">
-                  </a> <!-- navigateToProfile_IE -->
-                  <span class="method-name">navigateToProfile_IE</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //*[@id=&apos;react-root&apos;]//div/span[contains(text(),&apos;Profile&apos;)]
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SANTOSH-PC&apos;, ip: &apos;192.168.0.8&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: false, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:8777/, nativeEvents: true, requireWindowFocus: true}, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: ce262a26-3264-4765-8b2a-235db57df6d0
-*** Element info: {Using=xpath, value=//*[@id=&apos;react-root&apos;]//div/span[contains(text(),&apos;Profile&apos;)]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-	at Utils.TestUtil.highLightElement(TestUtil.java:29)
-	at Pages.twitLoginPage.navigateToProfile(twitLoginPage.java:63)
-	at TestCases.TC4_twitLoginIE.navigateToProfile_IE(TC4_twitLoginIE.java:37)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 30 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestingSuite-class-failed -->
-          <div class="suite-TestingSuite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">TestCases.TC3_twitLoginChrome</span>
+              <span class="class-name">TestCases.TC3_twitLoginChromeNegative</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -256,10 +142,55 @@ Session ID: ce262a26-3264-4765-8b2a-235db57df6d0
                   <a name="navigateToProfile_Chrome">
                   </a> <!-- navigateToProfile_Chrome -->
                   <span class="method-name">navigateToProfile_Chrome</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;react-root&apos;]//div/span[contains(text(),&apos;Profile&apos;)]&quot;}
+  (Session info: chrome=77.0.3865.90)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;SANTOSH-PC&apos;, ip: &apos;192.168.0.8&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_191&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\Santosh\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:54071}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6cd32ef18d789f1a9709eff84d660b09
+*** Element info: {Using=xpath, value=//*[@id=&apos;react-root&apos;]//div/span[contains(text(),&apos;Profile&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+	at Utils.TestUtil.highLightElement(TestUtil.java:30)
+	at Pages.twitLoginPage.navigateToProfile(twitLoginPage.java:63)
+	at TestCases.TC3_twitLoginChromeNegative.navigateToProfile_Chrome(TC3_twitLoginChromeNegative.java:45)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (--TestNGDescription :-- Navigate to twitter profile page)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestingSuite-class-failed -->
+          <div class="suite-TestingSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCases.TC3_twitLoginChromeNegative</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="twitterLogin_Chrome">
@@ -267,28 +198,6 @@ Session ID: ce262a26-3264-4765-8b2a-235db57df6d0
                   <span class="method-name">twitterLogin_Chrome</span>
                   <em>
 (--TestNGDescription :-- Log into twitter account)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestingSuite-class-passed -->
-          <div class="suite-TestingSuite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">TestCases.TC4_twitLoginIE</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="twitterLogin_IE">
-                  </a> <!-- twitterLogin_IE -->
-                  <span class="method-name">twitterLogin_IE</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="twitterLogin_IE">
-                  </a> <!-- twitterLogin_IE -->
-                  <span class="method-name">twitterLogin_IE</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -306,21 +215,11 @@ Session ID: ce262a26-3264-4765-8b2a-235db57df6d0
   &lt;listeners&gt;
     &lt;listener class-name=&quot;Listeners.CustomListeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;TC#1&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;TestCases.TC3_twitLoginChrome&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- TC#1 --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;TC#2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestCases.TC4_twitLoginIE&quot;/&gt;
+      &lt;class name=&quot;TestCases.TC3_twitLoginChromeNegative&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- TC#2 --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;TC#3&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;TestCases.TC4_twitLoginIE&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- TC#3 --&gt;
 &lt;/suite&gt; &lt;!-- TestingSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -332,13 +231,7 @@ Session ID: ce262a26-3264-4765-8b2a-235db57df6d0
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">TC#1 (1 class)</span>
-              </li>
-              <li>
                 <span class="test-name">TC#2 (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">TC#3 (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -364,36 +257,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'twitterLogin_IE')
-data.setCell(0, 2, 'TestCases.TC4_twitLoginIE')
-data.setCell(0, 3, 11962);
+data.setCell(0, 1, 'navigateToProfile_Chrome')
+data.setCell(0, 2, 'TestCases.TC3_twitLoginChromeNegative')
+data.setCell(0, 3, 12420);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'twitterLogin_IE')
-data.setCell(1, 2, 'TestCases.TC4_twitLoginIE')
-data.setCell(1, 3, 10414);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'navigateToProfile_IE')
-data.setCell(2, 2, 'TestCases.TC4_twitLoginIE')
-data.setCell(2, 3, 5125);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'navigateToProfile_IE')
-data.setCell(3, 2, 'TestCases.TC4_twitLoginIE')
-data.setCell(3, 3, 5042);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'twitterLogin_Chrome')
-data.setCell(4, 2, 'TestCases.TC3_twitLoginChrome')
-data.setCell(4, 3, 3724);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'navigateToProfile_Chrome')
-data.setCell(5, 2, 'TestCases.TC3_twitLoginChrome')
-data.setCell(5, 3, 2347);
+data.setCell(1, 1, 'twitterLogin_Chrome')
+data.setCell(1, 2, 'TestCases.TC3_twitLoginChromeNegative')
+data.setCell(1, 3, 11730);
 window.suiteTableData['TestingSuite']= { tableData: data, tableDiv: 'times-div-TestingSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 38 seconds</span>
+              <span class="suite-total-time">Total running time: 24 seconds</span>
               <div id="times-div-TestingSuite">
               </div> <!-- times-div-TestingSuite -->
             </div> <!-- times-div -->
@@ -419,65 +296,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.TC3_twitLoginChrome</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestCases.TC3_twitLoginChromeNegative</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">launchBrowser_Chrome</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">twitterLogin_Chrome</span>
-                <span class="method-start">9997 ms</span>
+                <span class="method-start">9986 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">navigateToProfile_Chrome</span>
-                <span class="method-start">14030 ms</span>
+                <span class="method-start">77440 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown_Chrome</span>
-                <span class="method-start">16384 ms</span>
-              </div> <!-- configuration-test after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.TC4_twitLoginIE</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">launchBrowser_IE</span>
-                <span class="method-start">16956 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="test-method">
-                <span class="method-name">twitterLogin_IE</span>
-                <span class="method-start">21391 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">navigateToProfile_IE</span>
-                <span class="method-start">31808 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">tearDown_IE</span>
-                <span class="method-start">38196 ms</span>
-              </div> <!-- configuration-test after -->
-              <div class="configuration-test before">
-                <span class="method-name">launchBrowser_IE</span>
-                <span class="method-start">38377 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="test-method">
-                <span class="method-name">twitterLogin_IE</span>
-                <span class="method-start">42028 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">navigateToProfile_IE</span>
-                <span class="method-start">53992 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">tearDown_IE</span>
-                <span class="method-start">59328 ms</span>
+                <span class="method-start">257144 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">59467 ms</span>
+                <span class="method-start">257752 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -17,6 +17,7 @@ public class TestUtil extends TestBase {
 	public static String screenshotName;
     public static WebDriver driver;
 
+
 /*   public TestUtil(WebDriver driver)
     {
         super();

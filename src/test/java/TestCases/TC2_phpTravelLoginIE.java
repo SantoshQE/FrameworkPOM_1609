@@ -4,6 +4,7 @@ import Config.TestBase;
 import Pages.phpTravelsLoginPage;
 //import com.sun.org.glassfish.gmbal.Description;
 import io.qameta.allure.Description;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -12,10 +13,13 @@ public class TC2_phpTravelLoginIE extends TestBase
 {
     public static phpTravelsLoginPage phpLoginPg ;
     public static TestBase init ;
-/*    public TC1_phpTravelLogin()
-    {
 
-    }*/
+
+
+    /*    public TC1_phpTravelLogin()
+        {
+
+        }*/
     @BeforeTest
     @Description("Call testbase class and open browser")
     public void launchBrowser()

@@ -1,5 +1,6 @@
 package ExtentReportListener;
 
+import Listeners.CustomListeners;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -13,12 +14,13 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ExtentManager {
+public class ExtentManager extends CustomListeners {
 
-    private static ExtentReports extent;
+    public static ExtentReports extent;
     public WebDriver driver;
     public ExtentHtmlReporter htmlReporter;
-    public ExtentTest logger;
+    public ExtentTest extentTestbase;
+    //public static ExtentTest extentTestbase;
 
     public static ExtentReports getInstance()
     {
@@ -37,10 +39,6 @@ public class ExtentManager {
             htmlReporter.config().setReportName("QE Test Report");
             // Dark Theme
           //  htmlReporter.config().setTheme(Theme.STANDARD);
-
-
-
-
         }
         return extent;
     }
