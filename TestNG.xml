@@ -5,9 +5,14 @@
        <!-- <listener class-name="ExtentReportListener.ExtentReporterNG" />-->
         <listener class-name="Listeners.CustomListeners"/>
     </listeners>
-    <test name="TC#2">
+    <test name="TC#1">
         <classes>
-            <class name="TestCases.TC3_twitLoginChromeNegative"/>
+            <class name="TestCases.TC3_twitLoginChrome"/>
         </classes>
     </test>
+    <test name="TC#2">
+    <classes>
+        <class name="TestCases.TC3_twitLoginChromeNegative"/>
+    </classes>
+</test>
 </suite>

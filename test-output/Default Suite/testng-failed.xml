@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
   <test thread-count="5" name="SeleniumReports(failed)">
     <classes>
-      <class name="TestCases.TC3_twitLoginChromeNegative">
+      <class name="TestCases.TC3_twitLoginChrome">
         <methods>
-          <include name="navigateToProfile_Chrome"/>
-          <include name="tearDown_Chrome"/>
           <include name="twitterLogin_Chrome"/>
-          <include name="tearDown"/>
           <include name="launchBrowser_Chrome"/>
+          <include name="tearDown_Chrome"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- TestCases.TC3_twitLoginChromeNegative -->
+      </class> <!-- TestCases.TC3_twitLoginChrome -->
     </classes>
   </test> <!-- SeleniumReports(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

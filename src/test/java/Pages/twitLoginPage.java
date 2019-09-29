@@ -1,5 +1,6 @@
 package Pages;
 
+import Config.TestBase;
 import ObjectRepository.Twitter_OR;
 import Utils.TestUtil;
 import io.qameta.allure.Step;
@@ -8,15 +9,26 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
 public class twitLoginPage
 {
     public static WebDriver driver;
+
+    @BeforeTest
+    public void setUp() {
+       TestBase t = new TestBase();
+       // WebDriver driver = t.getDriver();
+    }
+
     public twitLoginPage(WebDriver driver)
     {
-        this.driver = driver;
+        TestBase t = new TestBase();
+      //  WebDriver driver = t.getDriver();
+        this.driver = t.getDriver();
         PageFactory.initElements(driver,this);
     }
    // ExtentReporterNG ExtentRp = new ExtentReporterNG();

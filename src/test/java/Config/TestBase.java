@@ -15,6 +15,7 @@ import org.testng.annotations.AfterSuite;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
+import org.testng.annotations.BeforeClass;
 
 public class TestBase
 {
@@ -31,13 +32,17 @@ public class TestBase
     public static Logger log = Logger.getLogger("devpinoyLogger");
     public  static DesiredCapabilities DCap;
     public ExtentReports report = ExtentManager.getInstance();
-    public ExtentManager logger;
+   // public ExtentManager logger;
    // public static ExtentTest extentTestbase;
 
 /*    public TestBase(WebDriver driver)
     {
         this.driver = driver;
     }*/
+    public static WebDriver getDriver()
+    {
+        return driver;
+    }
 
     public static void open_Browser(String browserName) {
         try {
@@ -54,7 +59,7 @@ public class TestBase
                 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir").toString() + "/src/resources/ChromeDriver/Chrome76/chromedriver.exe");
                 driver = new ChromeDriver();
                 driver.manage().window().maximize();
-                driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+              driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             } else if ("ie".equalsIgnoreCase(browserName))
             {
                 log.debug("inside IE driver initialization step");
@@ -96,6 +101,15 @@ public class TestBase
         }
         log.debug("test execution completed !!!");
        // report.flush();
+    }
+   // @BeforeClass
+    public void initializeTestBaseSetup(String browserName) {
+        try {
+            open_Browser(browserName);
+
+        } catch (Exception e) {
+            System.out.println("Error....." + e.getStackTrace());
+        }
     }
 }
 

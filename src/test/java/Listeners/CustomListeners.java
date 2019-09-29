@@ -37,8 +37,9 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
    public void onTestSuccess(ITestResult arg0)
    {
        System.out.println("Entered the onTestSuccess method...");
+       ExtentManager.getTest().log(Status.PASS, "Test passed");
       // extentTest = report.createTest(arg0.getName().toUpperCase());
-       extentTestbase = report.createTest(arg0.getName().toUpperCase());
+      // extentTestbase = report.createTest(arg0.getName().toUpperCase());
       // System.setProperty("org.uncommons.reportng.escape-output","false");
        try
        {
@@ -47,11 +48,10 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
        {
            e.printStackTrace();
        }
-       extentTestbase.log(Status.PASS,arg0.getName().toUpperCase());
+       ExtentManager.getTest().log(Status.PASS,arg0.getName().toUpperCase());
      //  TestBase.extentTest.log(Status.PASS,arg0.getTestName().toString());
        try {
-           // System.out.println(screenshotPath);
-           extentTestbase.log(Status.PASS, "Please refer below Snapshot: " + extentTestbase.addScreenCaptureFromPath(screenshotPath.toString()));
+           ExtentManager.getTest().log(Status.PASS, "Please refer below Snapshot: " + ExtentManager.getTest().addScreenCaptureFromPath(screenshotPath.toString()));
        } catch (IOException e)
        {
            e.printStackTrace();
@@ -62,17 +62,18 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
     public void onTestFailure(ITestResult arg0)
     {
         System.out.println("Entered the onTestFailure method...");
-        extentTestbase = report.createTest(arg0.getName().toUpperCase());
+      //  extentTestbase = report.createTest(arg0.getName().toUpperCase());
+        ExtentManager.getTest().log(Status.FAIL, "Test Failed");
         System.setProperty("org.uncommons.reportng.escape-output","false");
         try {
             screenshotPath = TestUtil.captureScreenshot();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        extentTestbase.log(Status.FAIL, arg0.getName().toUpperCase()+" Failed with exception : "+arg0.getThrowable().getMessage().substring(0,arg0.getThrowable().getMessage().toString().indexOf("For documentation on this error")));
+        ExtentManager.getTest().log(Status.FAIL, arg0.getName().toUpperCase()+" Failed with exception : "+arg0.getThrowable().getMessage().substring(0,arg0.getThrowable().getMessage().toString().indexOf("For documentation on this error")));
         try {
             // System.out.println(screenshotPath);
-            extentTestbase.log(Status.FAIL, "Please refer below Snapshot: " + extentTestbase.addScreenCaptureFromPath(screenshotPath.toString()));
+            ExtentManager.getTest().log(Status.FAIL, "Please refer below Snapshot: " + ExtentManager.getTest().addScreenCaptureFromPath(screenshotPath.toString()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -84,6 +85,9 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
         System.out.println("Entered the onFinish -- ITestContext -- method...");
         // TODO Auto-generated method stub
      //   report.flush();
+        //ExtentTestManager.endTest();
+        ExtentManager.endTest();
+        ExtentManager.getInstance().flush();
     }
     @Override
     public void onFinish(ISuite arg0) {
@@ -132,6 +136,7 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
     @Override
     public void onTestStart(ITestResult arg0) {
         System.out.println("Entered the onTestStart method...");
+        ExtentManager.startTest(arg0.getMethod().getMethodName());
        // extentTest = report.createTest(arg0.getName().toUpperCase());
     }
 

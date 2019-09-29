@@ -1,6 +1,7 @@
 package TestCases;
 
 import Config.TestBase;
+import ExtentReportListener.ExtentManager;
 import Pages.twitLoginPage;
 import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
@@ -35,14 +36,14 @@ public class TC3_twitLoginChromeNegative extends TestBase
        // init.test.assignCategory("Smoke");
         twtLoginPg.loginToTwitterAccount("9967887510","Tcs@19831");
         //extentTestbase.assignCategory("Regression");
-
+        ExtentManager.getTest().assignCategory("NegativeTests");
 
     }
     @Test(priority = 2,description ="--TestNGDescription :-- Navigate to twitter profile page" )
-    public void navigateToProfile_Chrome() throws Throwable {
-       // init.test.assignCategory("Smoke");
-
+    public void navigateToProfile_Chrome() throws Throwable
+    {
         twtLoginPg.navigateToProfile();
+        ExtentManager.getTest().assignCategory("NegativeTests");
         //extentTest.createNode("navigateToProfile_Chrome_node1");
        // extentTest.createNode("navigateToProfile_Chrome_node2");
       //  extentTestbase.createNode(extentTestbase.getStatus().toString());
