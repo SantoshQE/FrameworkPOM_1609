@@ -1,11 +1,15 @@
 package Utils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Base64;
 import java.util.Date;
 
 import Config.TestBase;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.*;
 
 public class TestUtil extends TestBase {
@@ -50,7 +54,32 @@ public class TestUtil extends TestBase {
         return screenshotPath;
 		//FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName));
 	}
+    public static String captureScreenshotBASE64(String TCName) throws IOException, InterruptedException
+    {
+        File scrFile = ((TakesScreenshot) TestBase.driver).getScreenshotAs(OutputType.FILE);
+        Date d = new Date();
+        screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".png";
+        String destination = System.getProperty("user.dir") + "\\Screenshots\\" + TCName+"_"+screenshotName;
+        File finalDestination = new File(destination);
+        FileUtils.copyFile(scrFile, finalDestination);
+        Thread.sleep(2000);
+        InputStream is = new FileInputStream(finalDestination);
+        byte[] imageBytes = IOUtils.toByteArray(is);
+        Thread.sleep(2000);
+        String base64 = Base64.getEncoder().encodeToString(imageBytes);
+        return base64;
+        //Extent.log(LogStatus.INFO, "Snapshot below: " + extent.addBase64ScreenShot("data:image/png;base64,"+base64));
+    }
 
+
+
+
+    public String base64conversion(WebDriver driver) throws Exception {
+        TakesScreenshot newScreen = (TakesScreenshot) driver;
+        String scnShot = newScreen.getScreenshotAs(OutputType.BASE64);
+        return "data:image/jpg;base64, " + scnShot ;
+
+    }
 /*	@DataProvider(name="dp")
 	public Object[][] getData(Method m) {
 

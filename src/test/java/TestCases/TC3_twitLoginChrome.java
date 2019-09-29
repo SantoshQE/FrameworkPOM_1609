@@ -14,7 +14,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import Listeners.CustomListeners;
 
-//@Listeners(CustomListeners.class)
+@Listeners(CustomListeners.class)
 public class TC3_twitLoginChrome  extends TestBase
 {
     public static twitLoginPage twtLoginPg ;
@@ -45,6 +45,7 @@ public class TC3_twitLoginChrome  extends TestBase
         twtLoginPg.loginToTwitterAccount("9967887510","Tcs@1983");
        //extent = ExtentManager.getTest().assignCategory();
         ExtentManager.getTest().assignCategory("PositiveTests");
+
     }
     @Test(priority = 2,description ="--TestNGDescription :-- Navigate to twitter profile page" )
     public void navigateToProfile_Chrome() throws Throwable {

@@ -37,25 +37,24 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
    public void onTestSuccess(ITestResult arg0)
    {
        System.out.println("Entered the onTestSuccess method...");
-       ExtentManager.getTest().log(Status.PASS, "Test passed");
+       ExtentManager.getTest().log(Status.PASS, "Test passed for Test Method "+arg0.getName().toUpperCase());
       // extentTest = report.createTest(arg0.getName().toUpperCase());
       // extentTestbase = report.createTest(arg0.getName().toUpperCase());
       // System.setProperty("org.uncommons.reportng.escape-output","false");
        try
        {
-           screenshotPath = TestUtil.captureScreenshot();
-       } catch (IOException e)
+           //screenshotPath = TestUtil.captureScreenshot();
+           screenshotPath = TestUtil.captureScreenshotBASE64(arg0.getName().toUpperCase().toString());
+       } catch (IOException | InterruptedException e)
        {
            e.printStackTrace();
        }
-       ExtentManager.getTest().log(Status.PASS,arg0.getName().toUpperCase());
+     //  ExtentManager.getTest().log(Status.PASS,arg0.getName().toUpperCase());
      //  TestBase.extentTest.log(Status.PASS,arg0.getTestName().toString());
-       try {
-           ExtentManager.getTest().log(Status.PASS, "Please refer below Snapshot: " + ExtentManager.getTest().addScreenCaptureFromPath(screenshotPath.toString()));
-       } catch (IOException e)
-       {
-           e.printStackTrace();
-       }
+       // ExtentManager.getTest().log(Status.PASS, "Please refer below Snapshot: " + ExtentManager.getTest().addScreenCaptureFromPath(screenshotPath.toString()));
+       ExtentManager.getTest().log(Status.INFO, "Please refer below Snapshot for TestMethod : " + arg0.getName().toUpperCase());
+       // ExtentManager.getTest().log(Status.INFO, " "+ExtentManager.getTest().addScreenCaptureFromPath(screenshotPath.toString()));
+       ExtentManager.getTest().log(Status.INFO, " "+ExtentManager.getTest().addScreenCaptureFromBase64String(screenshotPath.toString()));
        //report.flush();
    }
     @Override

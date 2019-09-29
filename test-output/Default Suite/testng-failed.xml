@@ -8,6 +8,7 @@
           <include name="twitterLogin_Chrome"/>
           <include name="launchBrowser_Chrome"/>
           <include name="tearDown_Chrome"/>
+          <include name="navigateToProfile_Chrome"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- TestCases.TC3_twitLoginChrome -->
