@@ -14,7 +14,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import Listeners.CustomListeners;
 
-@Listeners(CustomListeners.class)
+//@Listeners(CustomListeners.class)
 public class TC3_twitLoginChrome  extends TestBase
 {
     public static twitLoginPage twtLoginPg ;
@@ -38,10 +38,10 @@ public class TC3_twitLoginChrome  extends TestBase
     {
        // init.test.assignCategory("Smoke");
 //        extentTest.assignCategory("Regression");
-        parentTest = report.createTest("Parent Test --twitterLogin_Chrome");
+        //parentTest = report.createTest("Parent Test --twitterLogin_Chrome");
         //childTest = ExtentManager.getTest().createNode("Log into twitter application");
-        childTest = parentTest.createNode("Log into twitter application");
-        childTest.log(Status.PASS, MarkupHelper.createLabel("Twitter login successful", ExtentColor.BLUE));
+        //childTest = parentTest.createNode("Log into twitter application");
+        //childTest.log(Status.PASS, MarkupHelper.createLabel("Twitter login successful", ExtentColor.BLUE));
         twtLoginPg.loginToTwitterAccount("9967887510","Tcs@1983");
        //extent = ExtentManager.getTest().assignCategory();
         ExtentManager.getTest().assignCategory("PositiveTests");
@@ -51,9 +51,9 @@ public class TC3_twitLoginChrome  extends TestBase
        // init.test.assignCategory("Smoke");
      //   extentTest.assignCategory("Regression");
         twtLoginPg.navigateToProfile();
-        parentTest = report.createTest("Parent Test --navigateToProfile");
-        childTest = parentTest.createNode("Navigate To profile Link");
-        childTest.log(Status.PASS, MarkupHelper.createLabel("Profile page navigate", ExtentColor.BLUE));
+       // parentTest = report.createTest("Parent Test --navigateToProfile");
+      //  childTest = parentTest.createNode("Navigate To profile Link");
+       // childTest.log(Status.PASS, MarkupHelper.createLabel("Profile page navigate", ExtentColor.BLUE));
         ExtentManager.getTest().assignCategory("PositiveTests");
     }
     @AfterTest()
