@@ -1,27 +1,20 @@
 package Listeners;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
+import java.lang.reflect.Method;
+
 import Config.TestBase;
 import ExtentReportListener.ExtentManager;
 import Utils.TestUtil;
-import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.Markup;
-import org.openqa.selenium.WebDriver;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.SkipException;
-import org.testng.annotations.Test;
 
 import static com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath;
 /*import TestUtil.MonitoringMail;
@@ -36,6 +29,8 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
    @Override
    public void onTestSuccess(ITestResult arg0)
    {
+       //ExtentManager.getTest().debug(MarkupHelper.createLabel(arg0.getMethod().getQualifiedName(), ExtentColor.TRANSPARENT));
+       ExtentManager.getTest().info(MarkupHelper.createLabel(arg0.getMethod().getQualifiedName(), ExtentColor.INDIGO));
        System.out.println("Entered the onTestSuccess method...");
        ExtentManager.getTest().log(Status.PASS, "Test passed for Test Method "+arg0.getName().toUpperCase());
       // extentTest = report.createTest(arg0.getName().toUpperCase());
@@ -116,6 +111,7 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
     public void onStart(ITestContext arg0)
     {
         System.out.println("Entered the onStart -- ITestContext -- method...");
+      //  extentTestbase = report.createTest(arg0.getName().toUpperCase());
         // TODO Auto-generated method stub
     }
     @Override
@@ -132,13 +128,12 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
       //  report.endTest(test);
        // report.flush();
     }
-    @Override
-    public void onTestStart(ITestResult arg0) {
+    //@Override
+    public void onTestStart(ITestResult arg0, Method method) {
         System.out.println("Entered the onTestStart method...");
-        ExtentManager.startTest(arg0.getMethod().getMethodName());
+        ExtentManager.startTest(arg0.getMethod().getMethodName(), ExtentManager.getLabel(method.getDeclaringClass().getName()));
        // extentTest = report.createTest(arg0.getName().toUpperCase());
     }
-
 
     @Override
     public void onStart(ISuite arg0) {

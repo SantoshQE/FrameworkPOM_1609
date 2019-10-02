@@ -1,33 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="29500" started-at="2019-09-30T00:05:16 IST" finished-at="2019-09-30T00:05:45 IST">
+  <suite name="TestingSuite" duration-ms="52303" started-at="2019-10-02T09:20:35 IST" finished-at="2019-10-02T09:21:27 IST">
     <groups>
     </groups>
-    <test name="SeleniumReports" duration-ms="29500" started-at="2019-09-30T00:05:16 IST" finished-at="2019-09-30T00:05:45 IST">
+    <test name="TC#1" duration-ms="29983" started-at="2019-10-02T09:20:35 IST" finished-at="2019-10-02T09:21:05 IST">
       <class name="TestCases.TC3_twitLoginChrome">
-        <test-method status="PASS" signature="launchBrowser_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@160c3ec1]" name="launchBrowser_Chrome" is-config="true" duration-ms="9949" started-at="2019-09-30T00:05:16 IST" finished-at="2019-09-30T00:05:26 IST">
+        <test-method status="PASS" signature="launchBrowser_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@3704122f]" name="launchBrowser_Chrome" is-config="true" duration-ms="10478" started-at="2019-10-02T09:20:35 IST" finished-at="2019-10-02T09:20:46 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser_Chrome -->
-        <test-method status="PASS" signature="twitterLogin_Chrome()[pri:1, instance:TestCases.TC3_twitLoginChrome@160c3ec1]" name="twitterLogin_Chrome" duration-ms="6050" started-at="2019-09-30T00:05:26 IST" description="--TestNGDescription :-- Log into twitter account" finished-at="2019-09-30T00:05:32 IST">
+        <test-method status="PASS" signature="setup(java.lang.reflect.Method)[pri:0, instance:TestCases.TC3_twitLoginChrome@3704122f]" name="setup" is-config="true" duration-ms="31" started-at="2019-10-02T09:20:46 IST" finished-at="2019-10-02T09:20:46 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void TestCases.TC3_twitLoginChrome.twitterLogin_Chrome() throws java.lang.Throwable]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="twitterLogin_Chrome()[pri:1, instance:TestCases.TC3_twitLoginChrome@3704122f]" name="twitterLogin_Chrome" duration-ms="6031" started-at="2019-10-02T09:20:46 IST" finished-at="2019-10-02T09:20:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- twitterLogin_Chrome -->
-        <test-method status="PASS" signature="navigateToProfile_Chrome()[pri:2, instance:TestCases.TC3_twitLoginChrome@160c3ec1]" name="navigateToProfile_Chrome" duration-ms="660" started-at="2019-09-30T00:05:38 IST" description="--TestNGDescription :-- Navigate to twitter profile page" finished-at="2019-09-30T00:05:38 IST">
+        <test-method status="PASS" signature="setup(java.lang.reflect.Method)[pri:0, instance:TestCases.TC3_twitLoginChrome@3704122f]" name="setup" is-config="true" duration-ms="0" started-at="2019-10-02T09:20:57 IST" finished-at="2019-10-02T09:20:57 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void TestCases.TC3_twitLoginChrome.navigateToProfile_Chrome() throws java.lang.Throwable]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="navigateToProfile_Chrome()[pri:2, instance:TestCases.TC3_twitLoginChrome@3704122f]" name="navigateToProfile_Chrome" duration-ms="645" started-at="2019-10-02T09:20:58 IST" finished-at="2019-10-02T09:20:58 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToProfile_Chrome -->
-        <test-method status="PASS" signature="tearDown_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@160c3ec1]" name="tearDown_Chrome" is-config="true" duration-ms="2109" started-at="2019-09-30T00:05:43 IST" finished-at="2019-09-30T00:05:45 IST">
+        <test-method status="PASS" signature="tearDown_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@3704122f]" name="tearDown_Chrome" is-config="true" duration-ms="2371" started-at="2019-10-02T09:21:03 IST" finished-at="2019-10-02T09:21:05 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown_Chrome -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.TC3_twitLoginChrome@160c3ec1]" name="tearDown" is-config="true" duration-ms="524" started-at="2019-09-30T00:05:47 IST" finished-at="2019-09-30T00:05:47 IST">
+      </class> <!-- TestCases.TC3_twitLoginChrome -->
+    </test> <!-- TC#1 -->
+    <test name="TC#2" duration-ms="21116" started-at="2019-10-02T09:21:06 IST" finished-at="2019-10-02T09:21:27 IST">
+      <class name="TestCases.TC3_twitLoginChrome">
+        <test-method status="PASS" signature="launchBrowser_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@7692cd34]" name="launchBrowser_Chrome" is-config="true" duration-ms="6318" started-at="2019-10-02T09:21:06 IST" finished-at="2019-10-02T09:21:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser_Chrome -->
+        <test-method status="PASS" signature="setup(java.lang.reflect.Method)[pri:0, instance:TestCases.TC3_twitLoginChrome@7692cd34]" name="setup" is-config="true" duration-ms="1" started-at="2019-10-02T09:21:13 IST" finished-at="2019-10-02T09:21:13 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void TestCases.TC3_twitLoginChrome.twitterLogin_Chrome() throws java.lang.Throwable]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="twitterLogin_Chrome()[pri:1, instance:TestCases.TC3_twitLoginChrome@7692cd34]" name="twitterLogin_Chrome" duration-ms="4725" started-at="2019-10-02T09:21:13 IST" finished-at="2019-10-02T09:21:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- twitterLogin_Chrome -->
+        <test-method status="PASS" signature="setup(java.lang.reflect.Method)[pri:0, instance:TestCases.TC3_twitLoginChrome@7692cd34]" name="setup" is-config="true" duration-ms="0" started-at="2019-10-02T09:21:22 IST" finished-at="2019-10-02T09:21:22 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void TestCases.TC3_twitLoginChrome.navigateToProfile_Chrome() throws java.lang.Throwable]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="navigateToProfile_Chrome()[pri:2, instance:TestCases.TC3_twitLoginChrome@7692cd34]" name="navigateToProfile_Chrome" duration-ms="698" started-at="2019-10-02T09:21:22 IST" finished-at="2019-10-02T09:21:23 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToProfile_Chrome -->
+        <test-method status="PASS" signature="tearDown_Chrome()[pri:0, instance:TestCases.TC3_twitLoginChrome@7692cd34]" name="tearDown_Chrome" is-config="true" duration-ms="140" started-at="2019-10-02T09:21:27 IST" finished-at="2019-10-02T09:21:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown_Chrome -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.TC3_twitLoginChrome@7692cd34]" name="tearDown" is-config="true" duration-ms="938" started-at="2019-10-02T09:21:28 IST" finished-at="2019-10-02T09:21:29 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- TestCases.TC3_twitLoginChrome -->
-    </test> <!-- SeleniumReports -->
-  </suite> <!-- Default Suite -->
+    </test> <!-- TC#2 -->
+  </suite> <!-- TestingSuite -->
 </testng-results>

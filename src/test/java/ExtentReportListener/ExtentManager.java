@@ -3,17 +3,9 @@ package ExtentReportListener;
 import Listeners.CustomListeners;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,7 +29,7 @@ public class ExtentManager extends CustomListeners {
         extent.flush();
     }
 
-    public static synchronized ExtentTest startTest(String testName) {
+    public static synchronized ExtentTest startTest(String testName, Object label) {
         ExtentTest test = extent.createTest(testName);
         extentTestMap.put((int) (long) (Thread.currentThread().getId()), test);
         return test;
@@ -57,6 +49,7 @@ public class ExtentManager extends CustomListeners {
             htmlReporter.config().setDocumentTitle("QE Test Report");
             // Name of the report
             htmlReporter.config().setReportName("QE Test Report");
+            htmlReporter.config().setLevel();
 
             // Dark Theme
           //  htmlReporter.config().setTheme(Theme.STANDARD);
@@ -64,4 +57,9 @@ public class ExtentManager extends CustomListeners {
         return extent;
     }
 
+    public static Object getLabel(String name)
+    {
+        String text = null;
+        return "<span class='label outline info'>" + text + "</span>";
+    }
 }

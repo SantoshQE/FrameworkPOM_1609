@@ -1,0 +1,1 @@
+{"uuid":"6e07a562-7223-4c6e-bc68-d7b7409a71c0","name":"TestCases.TC3_twitLoginChrome","children":["252c4b44-ea87-4219-8ec9-a71b691b439f"],"befores":[{"name":"addToReport","status":"broken","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1569950419201,"stop":1569950419202}],"afters":[],"links":[],"start":1569950398262,"stop":1569950421940}

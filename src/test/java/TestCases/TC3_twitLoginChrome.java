@@ -8,13 +8,14 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
 import Listeners.CustomListeners;
+import Listeners.Listener2;
 
-@Listeners(CustomListeners.class)
+import java.lang.reflect.Method;
+
+//@Listeners({CustomListeners.class})
 public class TC3_twitLoginChrome  extends TestBase
 {
     public static twitLoginPage twtLoginPg ;
@@ -24,16 +25,30 @@ public class TC3_twitLoginChrome  extends TestBase
     public static ExtentTest parentTest;
     public static ExtentTest childTest;
 
+/*    @BeforeMethod(alwaysRun = true)
+    public void startExtent(Method method) {
+        System.out.println("Inside @BeforeMethod --startExtent ");
+        ExtentManager.startTest(method.getName(), ExtentManager.getLabel(method.getDeclaringClass().getName()));
+    }*/
+    @BeforeMethod
+    public void setup(Method method) {
+        String testMethodName = method.getName(); //This will be:verifySaveButtonEnabled
+        String descriptiveTestName = method.getAnnotation(Test.class).testName(); //This will be: 'Verify if the save button is enabled'
+        test = ExtentManager.startTest(descriptiveTestName, ExtentManager.getLabel(method.getDeclaringClass().getName()));
+    }
+
     @BeforeTest
     public void launchBrowser_Chrome()
     {
+        System.out.println("Inside @BeforeTest --launchBrowser_Chrome ");
         TestBase.open_Browser("Chrome");
         twtLoginPg = new twitLoginPage(driver);
         twtLoginPg.launchTwitterLoginPg("https://twitter.com/login?lang=en");
-       // extentTestbase.assignCategory("Regression");
+//        ExtentManager.getTest().log(Status.INFO,"launchBrowser_Chrome");
+    // extentTestbase.assignCategory("Regression");
       //  init = new TestBase();
     }
-    @Test(priority = 1,description ="--TestNGDescription :-- Log into twitter account" )
+    @Test(priority = 1,testName ="TC3_twitLoginChrome--TestNGDescription :-- Log into twitter account" )
     public void twitterLogin_Chrome() throws Throwable
     {
        // init.test.assignCategory("Smoke");
@@ -47,7 +62,7 @@ public class TC3_twitLoginChrome  extends TestBase
         ExtentManager.getTest().assignCategory("PositiveTests");
 
     }
-    @Test(priority = 2,description ="--TestNGDescription :-- Navigate to twitter profile page" )
+    @Test(priority = 2,testName ="TC3_twitLoginChrome--TestNGDescription :-- Navigate to twitter profile page" )
     public void navigateToProfile_Chrome() throws Throwable {
        // init.test.assignCategory("Smoke");
      //   extentTest.assignCategory("Regression");
@@ -63,5 +78,6 @@ public class TC3_twitLoginChrome  extends TestBase
         //init.test.assignCategory("Smoke");
         driver.close();
        // extentTest.assignCategory("Regression");
+      //  ExtentManager.getTest().log(Status.INFO,"tearDown_Chrome");
     }
 }
